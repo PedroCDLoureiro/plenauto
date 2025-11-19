@@ -149,3 +149,26 @@
         width: 263px;
     }
 }
+#atendimento {
+    .container {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        p {
+            font-weight: 200;
+        }
+        .input-field {
+            position: relative;
+            input {
+                width: 500px;
+                padding-right: 220px;
+            }
+            button {
+                position: absolute;
+                right: -5px;
+                padding: 7px 30px;
+                width: 206px;
+            }
+        }
+    }
+}

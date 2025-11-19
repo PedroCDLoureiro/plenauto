@@ -25,6 +25,13 @@ ul {
         list-style: none;
     }
 }
+input {
+    border: none;
+    border-radius: 30px;
+    height: 35px;
+    padding: 3px 15px;
+    outline: none;
+}
 h2 {
     font-size: variables.$fsz-xlarge;
     line-height: variables.$lh-xlarge;
@@ -61,4 +68,9 @@ section {
 .btn:hover {
     background-color: variables.$secondary-color;
     color: variables.$secondary-font-color;
+}
+.btn:active {
+    background-color: variables.$secondary-color !important;
+    border-color: variables.$secondary-color !important;
+    color: variables.$secondary-font-color !important;
 }
