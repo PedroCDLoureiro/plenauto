@@ -1,0 +1,33 @@
+@use "variables";
+
+header {
+    position: absolute;
+    z-index: 1;
+    padding: 26px 0 28px;
+    width: 100%;
+    .container {
+        .menu-header {
+            #nav-desk {
+                #menu-menu-principal {
+                    display: flex;
+                    align-items: center;
+                    gap: 35px;
+                    margin-bottom: 0;
+                    li {
+                        a {
+                            font-size: variables.$fsz-xsmall;
+                            line-height: variables.$lh-xsmall;
+                            color: #fff;
+                            font-weight: 600;
+                            text-decoration: none;
+                            transition: all ease 0.3s;
+                            &:hover {
+                                opacity: 0.6;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

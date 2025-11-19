@@ -1,0 +1,53 @@
+@use "variables";
+@use "fonts";
+@use "header";
+@use "footer";
+@use "index";
+@use "pages";
+@use "single";
+@use "mobile";
+
+// CONTAINER
+
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+// GERAL
+
+body {
+    font-family: "Raleway", sans-serif;
+}
+
+ul {
+    li {
+        list-style: none;
+    }
+}
+
+// BOTÕES
+
+.btn {
+    font-size: variables.$fsz-small;
+    text-decoration: none;
+    border-radius: 30px;
+    padding: 8px 24px;
+    transition: all ease 0.3s;
+}
+.primary-btn {
+    background-color: variables.$primary-color;
+    color: variables.$secondary-color;
+}
+.primary-btn:hover {
+    background-color: variables.$secondary-color;
+    color: variables.$primary-color;
+}
+.secondary-btn {
+    background-color: variables.$secondary-color;
+    color: variables.$primary-color;
+}
+.secondary-btn:hover {
+    background-color: variables.$primary-color;
+    color: variables.$secondary-color;
+}
