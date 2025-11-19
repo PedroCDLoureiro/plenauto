@@ -96,6 +96,38 @@ function create_para_sua_empresa_post_type() {
 }
 add_action( 'init', 'create_para_sua_empresa_post_type' );
 
+// Terceirização de frota
+function create_terceirizacao_frota_post_type() {
+    $args = array(
+        'labels' => array(
+            'name'               => 'Terceirização de frota',
+            'singular_name'      => 'Terceirização de frota',
+            'add_new'            => 'Adicionar Novo',
+            'add_new_item'       => 'Adicionar Novo',
+            'edit_item'          => 'Editar Terceirização de frota',
+            'new_item'           => 'Novo Terceirização de frota',
+            'view_item'          => 'Ver Terceirização de frota',
+            'search_items'       => 'Procurar',
+            'not_found'          => 'Nenhum Terceirização de frota encontrado',
+            'not_found_in_trash' => 'Nenhum Terceirização de frota encontrado na lixeira',
+            'all_items'          => 'Todos',
+            'archives'           => 'Arquivos de Terceirização de frota',
+            'attributes'         => 'Atributos de Terceirização de frota',
+            'insert_into_item'   => 'Inserir no Terceirização de frota',
+            'uploaded_to_this_item' => 'Carregado para este Terceirização de frota',
+            'filter_items_list'  => 'Filtrar lista de Terceirização de frota',
+        ),
+        'public' => true,
+        'has_archive' => true,
+        'menu_icon' => 'dashicons-clipboard',
+        'supports' => array( 'title'),
+        'rewrite' => array( 'slug' => 'terceirizacao_frota' ), 
+    );
+
+    register_post_type( 'terceirizacao_frota', $args );
+}
+add_action( 'init', 'create_terceirizacao_frota_post_type' );
+
 // Para você
 function create_para_voce_post_type() {
     $args = array(

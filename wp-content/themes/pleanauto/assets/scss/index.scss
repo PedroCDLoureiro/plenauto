@@ -68,6 +68,7 @@
     }
 }
 #por-que-alugar {
+    padding-top: 60px !important;
     .container {
         width: 60%;
         h4 {
@@ -117,5 +118,34 @@
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
+    }
+}
+#terceirizacao-de-frota {
+    padding: 60px 0 110px !important;
+    h2 {
+        margin-bottom: 30px;
+    }
+    .terceirizacao {
+        .item {
+            .content {
+                img {
+                    width: 45px;
+                }
+                h4 {
+                    font-size: variables.$fsz-base;
+                    line-height: variables.$lh-base;
+                    margin: 30px 0;
+                }
+                p {
+                    font-size: variables.$fsz-xsmall;
+                    line-height: variables.$lh-xsmall;
+                    margin: 0;
+                }
+            }
+        }
+    }
+    button {
+        margin-top: 30px;
+        width: 263px;
     }
 }
