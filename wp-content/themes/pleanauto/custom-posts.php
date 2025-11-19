@@ -64,6 +64,38 @@ function create_por_que_alugar_post_type() {
 }
 add_action( 'init', 'create_por_que_alugar_post_type' );
 
+// Para você
+function create_para_voce_post_type() {
+    $args = array(
+        'labels' => array(
+            'name'               => 'Para você',
+            'singular_name'      => 'Para você',
+            'add_new'            => 'Adicionar Novo',
+            'add_new_item'       => 'Adicionar Novo',
+            'edit_item'          => 'Editar Para você',
+            'new_item'           => 'Novo Para você',
+            'view_item'          => 'Ver Para você',
+            'search_items'       => 'Procurar',
+            'not_found'          => 'Nenhum Para você encontrado',
+            'not_found_in_trash' => 'Nenhum Para você encontrado na lixeira',
+            'all_items'          => 'Todos',
+            'archives'           => 'Arquivos de Para você',
+            'attributes'         => 'Atributos de Para você',
+            'insert_into_item'   => 'Inserir no Para você',
+            'uploaded_to_this_item' => 'Carregado para este Para você',
+            'filter_items_list'  => 'Filtrar lista de Para você',
+        ),
+        'public' => true,
+        'has_archive' => true,
+        'menu_icon' => 'dashicons-clipboard',
+        'supports' => array( 'title', 'thumbnail' ),
+        'rewrite' => array( 'slug' => 'para_voce' ), 
+    );
+
+    register_post_type( 'para_voce', $args );
+}
+add_action( 'init', 'create_para_voce_post_type' );
+
 // Sobre Nós
 function create_sobre_nos_post_type() {
     $args = array(

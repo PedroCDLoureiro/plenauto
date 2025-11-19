@@ -74,12 +74,6 @@
             font-size: variables.$fsz-small;
             line-height: variables.$lh-small;
         }
-        h2 {
-            font-size: variables.$fsz-xlarge;
-            line-height: variables.$lh-xlarge;
-            color: variables.$primary-color;
-            font-weight: bold;
-        }
         p {
             font-size: variables.$fsz-xsmall;
             line-height: variables.$lh-xsmall;
@@ -93,5 +87,14 @@
                 margin-bottom: 0;
             }
         }
+    }
+}
+#para-voce {
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: -35px;
+    h3 {
+        font-size: variables.$fsz-xsmall;
+        line-height: variables.$lh-xsmall;
     }
 }

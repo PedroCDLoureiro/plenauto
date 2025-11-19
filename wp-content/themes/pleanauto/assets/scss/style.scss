@@ -25,6 +25,12 @@ ul {
         list-style: none;
     }
 }
+h2 {
+    font-size: variables.$fsz-xlarge;
+    line-height: variables.$lh-xlarge;
+    color: variables.$primary-color;
+    font-weight: bold;
+}
 section {
     &:not(#slider-top) {
         padding: 60px 0;
@@ -35,9 +41,10 @@ section {
 
 .btn {
     font-size: variables.$fsz-small;
+    line-height: variables.$lh-small;
     text-decoration: none;
     border-radius: 30px;
-    padding: 8px 24px;
+    padding: 7px 36px;
     transition: all ease 0.3s;
 }
 .primary-btn {
