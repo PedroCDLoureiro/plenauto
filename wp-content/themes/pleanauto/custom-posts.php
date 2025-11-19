@@ -24,7 +24,7 @@ function create_slider_post_type() {
         'public' => true,
         'has_archive' => true,
         'menu_icon' => 'dashicons-images-alt2',
-        'supports' => array( 'title', 'editor' ),
+        'supports' => array( 'title'),
         'rewrite' => array( 'slug' => 'slider' ), 
     );
 

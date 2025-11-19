@@ -37,17 +37,13 @@ ul {
 }
 .primary-btn {
     background-color: variables.$primary-color;
-    color: variables.$secondary-color;
-}
-.primary-btn:hover {
-    background-color: variables.$secondary-color;
-    color: variables.$primary-color;
+    color: variables.$secondary-font-color;
 }
 .secondary-btn {
-    background-color: variables.$secondary-color;
-    color: variables.$primary-color;
-}
-.secondary-btn:hover {
-    background-color: variables.$primary-color;
+    background-color: variables.$secondary-font-color;
     color: variables.$secondary-color;
+}
+.btn:hover {
+    background-color: variables.$secondary-color;
+    color: variables.$secondary-font-color;
 }

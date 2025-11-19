@@ -12,6 +12,9 @@
             object-fit: cover;
             object-position: center;
         }
+        .slider-video {
+            height: 100dvh;
+        }
     }
     .container {
         position: absolute;
@@ -19,7 +22,8 @@
         left: 50%;
         transform: translate(-50%, -50%);
         .slider-text {
-            h2 {
+            h2,
+            h3 {
                 font-size: variables.$fsz-xxlarge;
                 line-height: variables.$lh-xxlarge;
                 color: variables.$secondary-font-color;
@@ -27,6 +31,37 @@
                 font-weight: 700;
                 p {
                     margin-bottom: 0;
+                }
+            }
+            h3 {
+                font-size: variables.$fsz-large;
+                line-height: variables.$lh-large;
+                font-weight: 300;
+                margin-top: 15px;
+            }
+            a {
+                margin-top: 25px;
+            }
+        }
+    }
+    .slick-dots {
+        bottom: 25px;
+        right: 70px;
+        text-align: right;
+        li {
+            margin: 0 3px;
+            button {
+                &::before {
+                    font-size: 12px;
+                    color: #fff;
+                    opacity: 1;
+                }
+            }
+            &.slick-active {
+                button {
+                    &::before {
+                        font-size: 20px;
+                    }
                 }
             }
         }

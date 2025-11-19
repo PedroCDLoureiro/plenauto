@@ -12,6 +12,11 @@
                 <?php while ( $query->have_posts() ) : $query->the_post(); ?>
                     <?php 
                         $midia = get_field('midia_slider_topo');
+                        $texto_principal = get_field('texto_principal');
+                        $texto_secundario = get_field('texto_secundario');
+                        $botao = get_field('botao');
+                        $texto_botao = get_field('texto_botao');
+                        $url_botao = get_field('url_botao');
                     ?>
                     <div class="slider-item">
                         <?php
@@ -32,7 +37,15 @@
                         ?>
                         <div class="container">
                             <div class="slider-text">
-                                <h2 class="slider-title"><?php the_content(); ?></h2>
+                                <?php if($texto_principal) : ?>
+                                    <h2 class="slider-title"><?= $texto_principal; ?></h2>
+                                <?php endif; ?>
+                                <?php if($texto_secundario) : ?>
+                                    <h3 class="slider-title"><?= $texto_secundario; ?></h3>
+                                <?php endif; ?>
+                                <?php if($botao) : ?>
+                                    <a href="<?= $url_botao; ?>" class="btn secondary-btn"><?= $texto_botao; ?></a>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
