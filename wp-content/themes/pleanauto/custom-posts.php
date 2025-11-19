@@ -32,6 +32,38 @@ function create_slider_post_type() {
 }
 add_action( 'init', 'create_slider_post_type' );
 
+// Por que alugar?
+function create_por_que_alugar_post_type() {
+    $args = array(
+        'labels' => array(
+            'name'               => 'Por que alugar?',
+            'singular_name'      => 'Por que alugar?',
+            'add_new'            => 'Adicionar Novo',
+            'add_new_item'       => 'Adicionar Novo',
+            'edit_item'          => 'Editar Por que alugar?',
+            'new_item'           => 'Novo Por que alugar?',
+            'view_item'          => 'Ver Por que alugar?',
+            'search_items'       => 'Procurar',
+            'not_found'          => 'Nenhum Por que alugar? encontrado',
+            'not_found_in_trash' => 'Nenhum Por que alugar? encontrado na lixeira',
+            'all_items'          => 'Todos',
+            'archives'           => 'Arquivos de Por que alugar?',
+            'attributes'         => 'Atributos de Por que alugar?',
+            'insert_into_item'   => 'Inserir no Por que alugar?',
+            'uploaded_to_this_item' => 'Carregado para este Por que alugar?',
+            'filter_items_list'  => 'Filtrar lista de Por que alugar?',
+        ),
+        'public' => true,
+        'has_archive' => true,
+        'menu_icon' => 'dashicons-clipboard',
+        'supports' => array( 'title', 'thumbnail' ),
+        'rewrite' => array( 'slug' => 'por_que_alugar' ), 
+    );
+
+    register_post_type( 'por_que_alugar', $args );
+}
+add_action( 'init', 'create_por_que_alugar_post_type' );
+
 // Sobre Nós
 function create_sobre_nos_post_type() {
     $args = array(

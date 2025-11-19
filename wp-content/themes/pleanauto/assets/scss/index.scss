@@ -67,3 +67,31 @@
         }
     }
 }
+#por-que-alugar {
+    .container {
+        width: 60%;
+        h4 {
+            font-size: variables.$fsz-small;
+            line-height: variables.$lh-small;
+        }
+        h2 {
+            font-size: variables.$fsz-xlarge;
+            line-height: variables.$lh-xlarge;
+            color: variables.$primary-color;
+            font-weight: bold;
+        }
+        p {
+            font-size: variables.$fsz-xsmall;
+            line-height: variables.$lh-xsmall;
+        }
+        span {
+            color: variables.$primary-color;
+        }
+        .descricao {
+            margin: 25px 0 30px;
+            p {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

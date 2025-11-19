@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"mobile.css","sourcesContent":[]}
+{"version":3,"sources":["mobile.scss"],"names":[],"mappings":"AAEA,0BAEQ,2BACI,MAAA","file":"mobile.css","sourcesContent":["@use \"variables\";\r\n\r\n@media (max-width: 1400px) {\r\n    #por-que-alugar {\r\n        .container {\r\n            width: 75%;\r\n        }\r\n    }\r\n}\r\n"]}

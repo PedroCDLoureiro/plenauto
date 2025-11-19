@@ -3,6 +3,7 @@
 <!-- Contents -->
 
 <?php get_template_part('content/slider'); ?>
+<?php get_template_part('content/por-que-alugar'); ?>
 
 <!-- Fim Contents -->
 
