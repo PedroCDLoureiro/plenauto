@@ -1,6 +1,6 @@
 <?php
     $args = array(
-        'post_type' => 'para_voce',
+        'post_type' => 'para_sua_empresa',
         'posts_per_page' => 1,
     );
     $query = new WP_Query($args);
@@ -13,15 +13,14 @@
         $img_width = $thumb_data[1];
         $img_height = $thumb_data[2];   
     ?>
-        <section id="para-voce" class="d-flex align-items-center">
-            <?php the_post_thumbnail('full', ['class' => 'w-100']); ?>
+        <section id="para-sua-empresa" class="d-flex align-items-center">
             <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h3 class="text-uppercase fw-bold mb-1">Para você</h3>
-                        <h2 class="mb-3"><?php the_title() ?></h2>
-                        <a href="<?= get_permalink(get_page_by_path('para-voce')); ?>" class="btn primary-btn">leia mais</a>
-                    </div>
+                <?php the_post_thumbnail('full', ['class' => 'w-100']); ?>
+                <div class="text">
+                    <h3 class="mb-1">Para sua Empresa</h3>
+                    <h2 class="mb-2"><?php the_title() ?></h2>
+                    <?php the_content(); ?>
+                    <a href="<?= get_permalink(get_page_by_path('para-voce')); ?>" class="btn primary-btn mt-1">leia mais</a>
                 </div>
             </div>
         </section>

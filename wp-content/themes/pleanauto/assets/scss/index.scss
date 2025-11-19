@@ -89,12 +89,33 @@
         }
     }
 }
+#para-sua-empresa {
+    h3,
+    p {
+        font-size: variables.$fsz-xsmall;
+        line-height: variables.$lh-xsmall;
+    }
+    h3 {
+        font-weight: 800;
+    }
+    .container {
+        position: relative;
+        .text {
+            position: absolute;
+            left: 39px;
+            bottom: 45px;
+            width: 25%;
+        }
+    }
+}
 #para-voce {
-    background-size: cover;
-    background-repeat: no-repeat;
-    margin-top: -35px;
     h3 {
         font-size: variables.$fsz-xsmall;
         line-height: variables.$lh-xsmall;
+    }
+    .container {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }

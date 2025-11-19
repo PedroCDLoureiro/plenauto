@@ -64,6 +64,38 @@ function create_por_que_alugar_post_type() {
 }
 add_action( 'init', 'create_por_que_alugar_post_type' );
 
+// Para sua empresa
+function create_para_sua_empresa_post_type() {
+    $args = array(
+        'labels' => array(
+            'name'               => 'Para sua empresa',
+            'singular_name'      => 'Para sua empresa',
+            'add_new'            => 'Adicionar Novo',
+            'add_new_item'       => 'Adicionar Novo',
+            'edit_item'          => 'Editar Para sua empresa',
+            'new_item'           => 'Novo Para sua empresa',
+            'view_item'          => 'Ver Para sua empresa',
+            'search_items'       => 'Procurar',
+            'not_found'          => 'Nenhum Para sua empresa encontrado',
+            'not_found_in_trash' => 'Nenhum Para sua empresa encontrado na lixeira',
+            'all_items'          => 'Todos',
+            'archives'           => 'Arquivos de Para sua empresa',
+            'attributes'         => 'Atributos de Para sua empresa',
+            'insert_into_item'   => 'Inserir no Para sua empresa',
+            'uploaded_to_this_item' => 'Carregado para este Para sua empresa',
+            'filter_items_list'  => 'Filtrar lista de Para sua empresa',
+        ),
+        'public' => true,
+        'has_archive' => true,
+        'menu_icon' => 'dashicons-clipboard',
+        'supports' => array( 'title', 'editor', 'thumbnail' ),
+        'rewrite' => array( 'slug' => 'para_sua_empresa' ), 
+    );
+
+    register_post_type( 'para_sua_empresa', $args );
+}
+add_action( 'init', 'create_para_sua_empresa_post_type' );
+
 // Para você
 function create_para_voce_post_type() {
     $args = array(
