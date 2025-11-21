@@ -231,7 +231,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     padding: 56px 0 78px !important;
-    margin: 40px 0 30px 0;
+    margin-top: 40px;
     h2 {
         font-weight: 600;
     }
@@ -342,6 +342,40 @@
         }
         &:active {
             cursor: grabbing;
+        }
+    }
+}
+#nossos-enderecos {
+    padding: 45px 0 !important;
+    .enderecos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px 80px;
+        .item {
+            .content {
+                gap: 20px;
+                .map-wrapper {
+                    width: 400px; /* ajuste */
+                    height: 300px; /* ajuste */
+                    overflow: hidden;
+                    clip-path: path(
+                        "M0 30 Q0 0 30 0 H400 Q430 0 430 30 V300 Q430 330 400 330 H30 Q0 330 0 300 Z"
+                    );
+                }
+                h4 {
+                    font-size: variables.$fsz-medium;
+                    line-height: variables.$lh-medium;
+                }
+                p {
+                    font-size: variables.$fsz-xsmall;
+                    line-height: variables.$lh-xsmall;
+                }
+                .infos-endereco {
+                    svg {
+                        width: 12px;
+                    }
+                }
+            }
         }
     }
 }

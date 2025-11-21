@@ -43,6 +43,9 @@ section {
         padding: 30px 0;
     }
 }
+.bg-primary {
+    background-color: variables.$primary-color !important;
+}
 .primary-color {
     color: variables.$primary-color;
 }

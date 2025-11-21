@@ -116,4 +116,16 @@ acf_add_options_page([
     'redirect'    => false
 ]);
 
+// Nossos endereços
+
+acf_add_options_page([
+    'page_title'  => 'Nossos endereços',
+    'menu_title'  => 'Nossos endereços',
+    'menu_slug'   => 'nossos_enderecos',
+    'post_id'     => 'nossos_enderecos',
+    'capability'  => 'edit_posts',
+    'position'    => 29,
+    'redirect'    => false
+]);
+
 ?>

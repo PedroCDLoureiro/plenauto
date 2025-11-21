@@ -10,6 +10,7 @@
 <?php get_template_part('content/para-voce'); ?>
 <?php get_template_part('content/por-que-assinar'); ?>
 <?php get_template_part('content/sustentabilidade-tecnologia'); ?>
+<?php get_template_part('content/nossos-enderecos'); ?>
 
 <!-- Fim Contents -->
 
