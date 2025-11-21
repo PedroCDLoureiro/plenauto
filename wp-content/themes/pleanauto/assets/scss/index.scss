@@ -189,6 +189,7 @@
                         text-align: left;
                         margin-bottom: 0;
                         display: -webkit-box;
+                        line-clamp: 2;
                         -webkit-line-clamp: 2;
                         -webkit-box-orient: vertical;
                         overflow: hidden;
@@ -223,5 +224,124 @@
     }
     a {
         margin-top: 55px;
+    }
+}
+#sustentabilidade-tecnologia {
+    background-image: url(../images/bg-depoimentos.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 56px 0 78px !important;
+    margin: 40px 0 30px 0;
+    h2 {
+        font-weight: 600;
+    }
+    .subtitulo {
+        font-size: variables.$fsz-xsmall;
+        line-height: variables.$lh-xsmall;
+        font-weight: 200;
+    }
+    #slider-depoimentos {
+        cursor: grab;
+        .slick-slide {
+            margin: 0 30px;
+        }
+        .slick-list {
+            margin: 0 -30px;
+        }
+        .item {
+            background-image: url(../images/bg-depoimento.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            padding: 10px 10px 5px 0;
+            height: 305px;
+            justify-content: space-between;
+            outline: none;
+            transition: all ease 0.3s;
+            .avaliacao {
+                position: relative;
+                width: 100px;
+                height: 20px;
+                background: url("../images/star-empty.svg") repeat-x;
+                background-size: 20px 20px;
+                .rating-fill {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 20px;
+                    background: url("../images/star-full.svg") repeat-x;
+                    background-size: 20px 20px;
+                    overflow: hidden;
+                }
+            }
+            .content {
+                padding: 0 10px 40px 40px;
+                .depoimento {
+                    font-size: variables.$fsz-xsmall;
+                    line-height: variables.$lh-xsmall;
+                    font-weight: 400;
+                }
+            }
+            .infos-depoimento {
+                padding-left: 15px;
+                gap: 40px;
+                .image-depoimento {
+                    width: 64px;
+                    height: 64px;
+                    background-color: #fff;
+                    border-radius: 50%;
+                    img {
+                        width: 58px;
+                        height: 58px;
+                        border-radius: 50%;
+                    }
+                }
+                .nome {
+                    font-size: variables.$fsz-xsmall;
+                    line-height: variables.$lh-xsmall;
+                    font-weight: 600;
+                }
+                .cargo {
+                    font-size: variables.$fsz-xxsmall;
+                    line-height: variables.$lh-xxsmall;
+                    font-weight: 400;
+                }
+            }
+            &.slick-active {
+                opacity: 0.46;
+            }
+            &.slick-current {
+                opacity: 1;
+            }
+        }
+
+        .slick-dots {
+            bottom: -60px;
+            text-align: left;
+            left: 30%;
+            width: max-content;
+            li {
+                width: 15px;
+                height: 20px;
+                margin: 0;
+                button {
+                    &::before {
+                        font-size: 4px;
+                        color: #fff;
+                        opacity: 1;
+                        transition: all ease 0.3s;
+                    }
+                }
+                &.slick-active {
+                    button {
+                        &::before {
+                            font-size: 10px;
+                        }
+                    }
+                }
+            }
+        }
+        &:active {
+            cursor: grabbing;
+        }
     }
 }

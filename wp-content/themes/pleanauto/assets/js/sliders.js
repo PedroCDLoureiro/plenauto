@@ -7,4 +7,13 @@ jQuery(document).ready(function ($) {
         fade: true,
         cssEase: "linear",
     });
+    $("#slider-depoimentos").slick({
+        autoplay: false,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        infinite: true,
+        arrows: false,
+        dots: true,
+        speed: 500,
+    });
 });

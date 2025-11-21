@@ -104,4 +104,16 @@ acf_add_options_page([
     'redirect'    => false
 ]);
 
+// Sustentabilidade e Tecnologia
+
+acf_add_options_page([
+    'page_title'  => 'Sustentabilidade e Tecnologia',
+    'menu_title'  => 'Sustentabilidade e Tecnologia',
+    'menu_slug'   => 'sustentabilidade_tecnologia',
+    'post_id'     => 'sustentabilidade_tecnologia',
+    'capability'  => 'edit_posts',
+    'position'    => 29,
+    'redirect'    => false
+]);
+
 ?>
