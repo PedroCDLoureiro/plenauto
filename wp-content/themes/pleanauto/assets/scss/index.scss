@@ -172,3 +172,56 @@
         }
     }
 }
+#por-que-assinar {
+    .beneficios {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px 80px;
+        width: 85%;
+        .item {
+            .content {
+                .img-beneficio {
+                    position: relative;
+                    h4 {
+                        position: absolute;
+                        bottom: 10px;
+                        left: 110px;
+                        text-align: left;
+                        margin-bottom: 0;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        height: calc(1em * 2 * 1.2);
+                        line-height: 1.2;
+                    }
+                    .index {
+                        position: absolute;
+                        left: 5px;
+                        bottom: 5px;
+                        width: 65px;
+                        height: 65px;
+                        background-color: variables.$primary-color;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: flex-end;
+                        justify-content: center;
+                        font-size: 38px;
+                        line-height: 70px;
+                        font-weight: 600;
+                        color: #fff;
+                    }
+                }
+                p {
+                    font-size: variables.$fsz-medium;
+                    line-height: variables.$lh-medium;
+                    margin-top: 15px;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    a {
+        margin-top: 55px;
+    }
+}

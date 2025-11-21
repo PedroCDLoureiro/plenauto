@@ -92,4 +92,16 @@ acf_add_options_page([
     'redirect'    => false
 ]);
 
+// Por que assinar?
+
+acf_add_options_page([
+    'page_title'  => 'Por que assinar?',
+    'menu_title'  => 'Por que assinar?',
+    'menu_slug'   => 'por_que_assinar',
+    'post_id'     => 'por_que_assinar',
+    'capability'  => 'edit_posts',
+    'position'    => 29,
+    'redirect'    => false
+]);
+
 ?>

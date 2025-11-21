@@ -24,6 +24,6 @@
                 </div>
             </div>
         <?php endif; ?>
-        <button class="btn primary-btn solicitar-orcamento">Solicitar orçamento</a>
+        <button class="btn primary-btn solicitar-orcamento">Solicitar orçamento</button>
     </div>
 </section>
