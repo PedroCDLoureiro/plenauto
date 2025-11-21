@@ -38,8 +38,10 @@
     add_action('login_enqueue_scripts', 'cutom_login_logo');
     function cutom_login_logo() {
         echo "<style type=\"text/css\">
+                body.login {background: #7B38A7;} 
+                body.login a, .dashicons{color: #FFF !important;} 
                 body.login div#login h1 a {
-                background-image: url(" . get_bloginfo('template_directory') . "/admin/image/logo.png);
+                background-image: url(" . get_bloginfo('template_directory') . "/admin/image/logo_branca.svg);
                 width: 218px;
                 background-size: 218px 63px;
             }</style>";
