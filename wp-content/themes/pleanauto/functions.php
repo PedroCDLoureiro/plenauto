@@ -125,6 +125,130 @@
         return $buttons;
     }
     add_filter( 'mce_buttons', 'enable_tinymce_colors' );
-    
-    
+
+    // Newsletter
+
+    function cpt_newsletter() {
+        register_post_type('newsletter', [
+            'label' => 'Newsletter',
+            'public' => false,
+            'show_ui' => true,
+            'menu_icon' => 'dashicons-email',
+            'supports' => ['title', 'custom-fields']
+        ]);
+    }
+    add_action('init', 'cpt_newsletter');
+
+    function newsletter_ajax_script() {
+        wp_localize_script('jquery', 'newsletter_ajax', [
+            'ajax_url' => admin_url('admin-ajax.php')
+        ]);
+    }
+    add_action('wp_enqueue_scripts', 'newsletter_ajax_script');
+
+    function salvar_newsletter() {
+        $email = sanitize_email($_POST['email']);
+
+        if (!is_email($email)) {
+            wp_send_json([
+                'status' => 'error',
+                'message' => 'E-mail inválido!'
+            ]);
+        }
+
+        if (email_exists_newsletter($email)) {
+            wp_send_json([
+                'status' => 'error',
+                'message' => 'Este e-mail já está cadastrado.'
+            ]);
+        }
+
+        // Salvar
+        $post_id = wp_insert_post([
+            'post_type'  => 'newsletter',
+            'post_title' => $email,
+            'post_status'=> 'publish'
+        ]);
+
+        update_post_meta($post_id, 'email', $email);
+
+        wp_send_json([
+            'status' => 'success',
+            'message' => 'Cadastrado com sucesso!'
+        ]);
+    }
+    add_action('wp_ajax_salvar_newsletter', 'salvar_newsletter');
+    add_action('wp_ajax_nopriv_salvar_newsletter', 'salvar_newsletter');
+
+    function email_exists_newsletter($email) {
+        $query = new WP_Query([
+            'post_type' => 'newsletter',
+            'meta_query' => [
+                [
+                    'key'   => 'email',
+                    'value' => $email,
+                    'compare' => '='
+                ]
+            ],
+            'posts_per_page' => 1,
+            'fields' => 'ids'
+        ]);
+
+        return !empty($query->posts);
+    }
+
+    // Adiciona link "Exportar CSV" na página do CPT newsletter
+    function newsletter_export_button() {
+        $screen = get_current_screen();
+        
+        if ($screen->post_type === 'newsletter') {
+            ?>
+            <a href="<?php echo admin_url('admin-post.php?action=export_newsletter_csv'); ?>" 
+            class="button button-primary" 
+            style="margin-left: 10px;">
+            Exportar CSV
+            </a>
+            <?php
+        }
+    }
+    add_action('manage_posts_extra_tablenav', 'newsletter_export_button');
+
+
+    // Exporta CSV
+    function export_newsletter_csv() {
+
+        if (!current_user_can('manage_options')) {
+            wp_die('Sem permissão.');
+        }
+
+        header('Content-Type: text/csv; charset=utf-8');
+        header('Content-Disposition: attachment; filename=newsletter-emails.csv');
+
+        $output = fopen('php://output', 'w');
+
+        // Cabeçalho
+        fputcsv($output, ['Email', 'Data']);
+
+        // Buscar todos os posts do CPT newsletter
+        $emails = new WP_Query([
+            'post_type'      => 'newsletter',
+            'posts_per_page' => -1,
+            'orderby'        => 'date',
+            'order'          => 'DESC'
+        ]);
+
+        if ($emails->have_posts()) {
+            while ($emails->have_posts()) {
+                $emails->the_post();
+                $email = get_the_title();
+                $date  = get_the_date('Y-m-d H:i:s');
+
+                fputcsv($output, [$email, $date]);
+            }
+        }
+
+        exit;
+    }
+    add_action('admin_post_export_newsletter_csv', 'export_newsletter_csv');
+
 ?>

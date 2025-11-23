@@ -72,7 +72,8 @@ section {
     background-color: variables.$secondary-color;
     color: variables.$secondary-font-color;
 }
-.btn:active {
+.btn:active,
+.btn:focus-visible {
     background-color: variables.$secondary-color !important;
     border-color: variables.$secondary-color !important;
     color: variables.$secondary-font-color !important;

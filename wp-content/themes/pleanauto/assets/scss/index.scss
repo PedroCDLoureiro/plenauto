@@ -230,7 +230,7 @@
     background-image: url(../images/bg-depoimentos.png);
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 56px 0 78px !important;
+    padding: 56px 0 58px !important;
     margin-top: 40px;
     h2 {
         font-weight: 600;
@@ -342,6 +342,35 @@
         }
         &:active {
             cursor: grabbing;
+        }
+    }
+}
+#newsletter {
+    padding: 40px 0 !important;
+    .input-field {
+        position: relative;
+        form {
+            position: relative;
+            input {
+                border: 1px solid #707070;
+                width: 450px;
+                padding-right: 120px;
+                margin-left: -30px;
+            }
+            button {
+                position: absolute;
+                right: -30px;
+            }
+        }
+        #newsletter-msg {
+            position: absolute;
+            bottom: -30px;
+            &.error {
+                color: variables.$danger-color;
+            }
+            &.success {
+                color: variables.$sucess-color;
+            }
         }
     }
 }
