@@ -84,6 +84,8 @@
         register_nav_menus(array(
             'main_menu' => __('Menu Principal', 'text-domain'),
             'footer_menu' => __('Menu Footer', 'text-domain'),
+            'menu_institucional' => __('Menu Institucional', 'text-domain'),
+            'menu_servicos' => __('Menu Serviços', 'text-domain'),
         ));
     }
     add_action('after_setup_theme', 'theme_setup');

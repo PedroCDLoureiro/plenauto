@@ -1,1 +1,88 @@
 @use "variables";
+
+footer {
+    background-color: variables.$secondary-color;
+    color: #fff;
+    padding: 40px 0;
+    h3 {
+        font-size: variables.$fsz-small;
+        line-height: variables.$lh-small;
+        font-weight: 600;
+    }
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding-left: 0;
+        margin-bottom: 0;
+        li {
+            svg {
+                width: 18px;
+                margin-right: 5px;
+                transition: all ease 0.3s;
+            }
+            a {
+                font-size: variables.$fsz-xsmall;
+                line-height: variables.$lh-xsmall;
+                color: #fff;
+                text-decoration: none;
+                font-weight: 200;
+                transition: all ease 0.3s;
+            }
+            &:hover {
+                a,
+                svg {
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+    .redes-sociais {
+        .rede {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            &.x {
+                svg {
+                    width: 12px;
+                }
+            }
+            &.youtube {
+                svg {
+                    width: 13px;
+                }
+            }
+            &.instagram {
+                svg {
+                    width: 15px;
+                }
+            }
+            &.facebook {
+                svg {
+                    width: 7px;
+                }
+            }
+        }
+    }
+}
+#copyright {
+    background-color: #222;
+    color: #fff;
+    font-size: 10px;
+    line-height: 11px;
+    padding: 12px 0;
+    font-weight: 200;
+    a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all ease 0.3s;
+        &:hover {
+            color: variables.$primary-color;
+        }
+    }
+}

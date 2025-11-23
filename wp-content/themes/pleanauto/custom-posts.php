@@ -128,4 +128,16 @@ acf_add_options_page([
     'redirect'    => false
 ]);
 
+// Dados rodapé
+
+acf_add_options_page([
+    'page_title'  => 'Dados rodapé',
+    'menu_title'  => 'Dados rodapé',
+    'menu_slug'   => 'dados_rodape',
+    'post_id'     => 'dados_rodape',
+    'capability'  => 'edit_posts',
+    'position'    => 29,
+    'redirect'    => false
+]);
+
 ?>
