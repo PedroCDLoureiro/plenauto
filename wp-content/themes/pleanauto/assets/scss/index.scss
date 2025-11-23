@@ -157,22 +157,13 @@
         p {
             font-weight: 200;
         }
-        .input-field {
-            position: relative;
-            input {
-                width: 500px;
-                padding-right: 220px;
-            }
-            button {
-                position: absolute;
-                right: -5px;
-                padding: 7px 30px;
-                width: 206px;
-            }
-        }
     }
 }
 #por-que-assinar {
+    .subtitulo {
+        font-size: variables.$fsz-xsmall;
+        line-height: variables.$lh-xsmall;
+    }
     .beneficios {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -360,6 +351,7 @@
             button {
                 position: absolute;
                 right: -30px;
+                padding: 7px 30px;
             }
         }
         #newsletter-msg {
@@ -378,7 +370,7 @@
     background-image: url(../images/bg-enderecos.png);
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 45px 0 !important;
+    padding: 45px 0 48px !important;
     h2 {
         margin-bottom: 35px;
     }
