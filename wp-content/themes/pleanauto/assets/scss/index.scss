@@ -346,7 +346,13 @@
     }
 }
 #nossos-enderecos {
+    background-image: url(../images/bg-enderecos.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     padding: 45px 0 !important;
+    h2 {
+        margin-bottom: 35px;
+    }
     .enderecos {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -355,20 +361,22 @@
             .content {
                 gap: 20px;
                 .map-wrapper {
-                    width: 400px; /* ajuste */
-                    height: 300px; /* ajuste */
-                    overflow: hidden;
-                    clip-path: path(
-                        "M0 30 Q0 0 30 0 H400 Q430 0 430 30 V300 Q430 330 400 330 H30 Q0 330 0 300 Z"
-                    );
+                    -webkit-mask-image: url("../images/path.png");
+                    mask-image: url("../images/path.png");
+                    -webkit-mask-size: 100% 100%;
+                    mask-size: 100% 100%;
+                    -webkit-mask-repeat: no-repeat;
+                    mask-repeat: no-repeat;
                 }
                 h4 {
                     font-size: variables.$fsz-medium;
                     line-height: variables.$lh-medium;
+                    font-weight: 500;
                 }
-                p {
+                a {
                     font-size: variables.$fsz-xsmall;
                     line-height: variables.$lh-xsmall;
+                    text-decoration: none;
                 }
                 .infos-endereco {
                     svg {
