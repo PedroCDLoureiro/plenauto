@@ -121,12 +121,21 @@
     add_filter('wp_nav_menu_items', 'atualizar_url_portal_no_menu', 10, 2);
     
     // Adicionar botão de cores no TinyMCE (Editor Clássico)
+
     function enable_tinymce_colors( $buttons ) {
         array_push( $buttons, 'forecolor' ); // cor do texto
         array_push( $buttons, 'backcolor' ); // cor de fundo
         return $buttons;
     }
     add_filter( 'mce_buttons', 'enable_tinymce_colors' );
+
+    // Remover editor de blocos e imagem destacada para páginas
+
+    add_action('init', function() {
+        remove_post_type_support('page', 'editor');
+        remove_post_type_support('page', 'thumbnail');
+    });
+
 
     // Newsletter
 

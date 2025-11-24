@@ -9,7 +9,7 @@
         <h2 class="text-center"><?= $titulo; ?></h2>
         <p class="w-50 text-center mb-5 subtitulo"><?= $subtitulo; ?></p>
         <?php if( have_rows('beneficios', $slug) ): ?>
-            <div class="beneficios">
+            <div class="beneficios list-grid">
                 <?php while( have_rows('beneficios', $slug) ): the_row();
                     $imagem_beneficio = get_sub_field('imagem_beneficio');
                     $titulo_beneficio = get_sub_field('titulo_beneficio');
@@ -17,7 +17,7 @@
                 ?>
                     <div class="item">
                         <div class="d-flex flex-column align-items-center text-center content">
-                            <div class="img-beneficio">
+                            <div class="img-item">
                                 <img src="<?= $imagem_beneficio['url'] ?>" alt="<?= $titulo_beneficio ?>" class="w-100">
                                 <span class="index"><?= get_row_index(); ?></span>
                                 <h4 class="text-white fw-bold"><?= $titulo_beneficio ?></h4>

@@ -1,1 +1,166 @@
 @use "variables";
+
+.page {
+    #page-para-empresas {
+        #bloco-empresa {
+            position: relative;
+            padding-top: 0;
+            margin-bottom: 55px;
+            #imagem-topo {
+                position: absolute;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center right;
+                top: 0;
+                right: 0;
+                width: 50%;
+                height: 100%;
+            }
+            .texto {
+                padding-right: 75px;
+                h2 {
+                    padding: 110px 0 27px;
+                }
+                p {
+                    font-size: variables.$fsz-medium;
+                    line-height: variables.$lh-medium;
+                    margin-bottom: 0;
+                }
+            }
+        }
+        #terceirizando {
+            position: relative;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            padding: 78px 0;
+            z-index: 0;
+            h2 {
+                margin-bottom: 60px;
+            }
+            #beneficios {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 34px;
+                .item {
+                    background-color: rgba(123, 56, 167, 0.6);
+                    border-radius: 5px;
+                    padding: 24px;
+                    h4,
+                    p {
+                        font-size: variables.$fsz-medium;
+                        line-height: variables.$lh-medium;
+                    }
+                    p {
+                        font-weight: 200;
+                    }
+                }
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.73);
+                z-index: -1;
+            }
+        }
+        #transforme {
+            position: relative;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            z-index: 0;
+            .text {
+                h2 {
+                    margin-bottom: 22px;
+                }
+                a {
+                    padding: 7px 16px;
+                }
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 40%;
+                height: 100%;
+                background: linear-gradient(to right, #000, #ffffff00);
+                opacity: 0.8;
+                z-index: -1;
+            }
+        }
+        #vantagens {
+            padding: 60px 0 70px;
+            h2 {
+                margin-bottom: 55px;
+            }
+            .vantagens {
+                .item {
+                    .img-item {
+                        position: relative;
+                        border-radius: 30px;
+                        .path-img {
+                            left: 0;
+                            z-index: 0;
+                        }
+                        span {
+                            z-index: 1;
+                        }
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 50%;
+                            background: linear-gradient(
+                                to top,
+                                #000,
+                                #ffffff00
+                            );
+                            border-radius: 30px;
+                            z-index: 0;
+                        }
+                    }
+                }
+            }
+        }
+        #formulario {
+            background-image: url("../images/bg-formulario.png");
+            padding: 40px 0 85px;
+            .content {
+                width: 47%;
+                margin: 0 auto;
+                .subtitulo {
+                    font-weight: 200;
+                    margin-bottom: 30px;
+                }
+                .formulario {
+                    text-align: center;
+                    input[type="text"],
+                    input[type="email"],
+                    input[type="tel"] {
+                        font-size: variables.$fsz-xsmall;
+                        line-height: variables.$lh-xsmall;
+                        padding: 10px 30px;
+                        width: 100%;
+                        &::placeholder {
+                            color: #000;
+                        }
+                    }
+                    p {
+                        margin-bottom: 10px;
+                    }
+                    input[type="submit"] {
+                        margin: 30px auto 0;
+                        width: 50%;
+                    }
+                }
+            }
+        }
+    }
+}

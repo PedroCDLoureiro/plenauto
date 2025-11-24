@@ -32,4 +32,27 @@ jQuery(document).ready(function ($) {
                 },
             });
         });
+
+    // FAQ
+
+    // Accordion
+    $(".faq-question").on("click", function () {
+        let item = $(this).parent();
+
+        // abrir/fechar individual
+        item.toggleClass("active");
+    });
+
+    // Ver mais / Ver menos
+    $("#faq-toggle").on("click", function () {
+        const hiddenItems = $(".faq-hidden");
+
+        hiddenItems.slideToggle();
+
+        if ($(this).text() === "Ver mais") {
+            $(this).text("Ver menos");
+        } else {
+            $(this).text("Ver mais");
+        }
+    });
 });

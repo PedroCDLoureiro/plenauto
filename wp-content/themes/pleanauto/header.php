@@ -25,7 +25,7 @@ if (!defined('ABSPATH')) exit;
     var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
 </script>
     <?php wp_body_open(); ?>
-<header class="site-header">
+<header class="site-header<?= !is_front_page() ? ' not-home' : ''; ?>">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-4 col-5">

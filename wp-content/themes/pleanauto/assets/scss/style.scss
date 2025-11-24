@@ -39,7 +39,7 @@ h2 {
     font-weight: bold;
 }
 section {
-    &:not(#slider-top) {
+    &:not(#slider-top, .page) {
         padding: 30px 0;
     }
 }
@@ -77,4 +77,135 @@ section {
     background-color: variables.$secondary-color !important;
     border-color: variables.$secondary-color !important;
     color: variables.$secondary-font-color !important;
+}
+
+// Outros
+
+.path-img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+}
+.list-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px 80px;
+    width: 85%;
+    .item {
+        .content {
+            .img-item {
+                position: relative;
+                h4 {
+                    position: absolute;
+                    bottom: 10px;
+                    left: 110px;
+                    text-align: left;
+                    margin-bottom: 0;
+                    display: -webkit-box;
+                    line-clamp: 2;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    height: calc(1em * 2 * 1.2);
+                    line-height: 1.2;
+                }
+                .index {
+                    position: absolute;
+                    left: 5px;
+                    bottom: 5px;
+                    width: 65px;
+                    height: 65px;
+                    background-color: variables.$primary-color;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: center;
+                    font-size: 38px;
+                    line-height: 70px;
+                    font-weight: 600;
+                    color: #fff;
+                }
+            }
+            p {
+                font-size: variables.$fsz-medium;
+                line-height: variables.$lh-medium;
+                margin-top: 20px;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+// FORMULÁRIOS
+
+.wpcf7 form .wpcf7-response-output {
+    border-radius: 5px;
+    padding: 10px;
+}
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.unaccepted .wpcf7-response-output,
+.wpcf7 form.payment-required .wpcf7-response-output {
+    background-color: variables.$error-color;
+    color: variables.$danger-color;
+    border: 1px solid variables.$danger-color;
+}
+.wpcf7 form.sent .wpcf7-response-output {
+    background-color: variables.$bg-sucess-color;
+    color: variables.$sucess-color;
+    border: 1px solid variables.$sucess-color;
+}
+
+// FAQ
+
+#faq {
+    padding: 60px 0 !important;
+    h2 {
+        margin-bottom: 30px;
+    }
+    .faq-list {
+        .faq-item {
+            border: 1px solid variables.$primary-color;
+            background: #f6f7f7 0% 0% no-repeat padding-box;
+            border: 1px solid variables.$primary-color;
+            border-radius: 26px;
+            padding: 12px 20px;
+            margin-bottom: 20px;
+            &.faq-hidden {
+                display: none;
+            }
+            .faq-question {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-weight: bold;
+                color: variables.$primary-color;
+                cursor: pointer;
+                svg {
+                    width: 15px;
+                    transition: all ease 0.3s;
+                }
+            }
+            &.active {
+                svg {
+                    transform: rotate(-180deg);
+                }
+                .faq-answer {
+                    max-height: 500px;
+                    opacity: 1;
+                    padding-top: 10px;
+                }
+            }
+            .faq-answer {
+                max-height: 0;
+                opacity: 0;
+                overflow: hidden;
+                transition: 0.3s ease;
+                color: variables.$secondary-color;
+            }
+        }
+    }
+    button {
+        width: 263px;
+        margin-top: 12px;
+    }
 }
