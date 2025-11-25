@@ -131,7 +131,7 @@
         }
         #formulario {
             background-image: url("../images/bg-formulario.png");
-            padding: 40px 0 85px;
+            padding: 40px 0 75px;
             .content {
                 width: 47%;
                 margin: 0 auto;
@@ -139,35 +139,46 @@
                     font-weight: 200;
                     margin-bottom: 30px;
                 }
-                .formulario {
-                    text-align: center;
-                    input[type="text"],
-                    input[type="email"],
-                    input[type="tel"] {
-                        font-size: variables.$fsz-xsmall;
-                        line-height: variables.$lh-xsmall;
-                        padding: 10px 30px;
-                        width: 100%;
-                        &::placeholder {
-                            color: #000;
-                        }
-                    }
-                    p {
-                        margin-bottom: 10px;
-                    }
-                    input[type="submit"] {
-                        margin: 30px auto 0;
-                        width: 50%;
-                    }
-                }
             }
         }
     }
     #page-para-voce {
+        #banner {
+            position: relative;
+            height: calc(100dvh - 100px);
+            img {
+                height: 100%;
+                object-fit: cover;
+            }
+            .container {
+                position: absolute;
+                bottom: 20%;
+                left: 50%;
+                transform: translateX(-50%);
+                p {
+                    font-size: variables.$fsz-xxlarge;
+                    line-height: variables.$lh-xxlarge;
+                    margin-bottom: 0;
+                }
+            }
+        }
+        #assinatura {
+            background-color: #f7f7f8;
+            padding: 50px 0;
+            h3 {
+                font-size: variables.$fsz-medium;
+                line-height: variables.$lh-medium;
+                font-weight: bold;
+            }
+            .descricao {
+                font-size: variables.$fsz-xsmall;
+                line-height: variables.$lh-xsmall;
+            }
+        }
         #bloco-beneficios {
             position: relative;
-            padding-top: 0;
-            margin-bottom: 55px;
+            padding: 0;
+            margin-bottom: 60px;
             #imagem-topo {
                 position: absolute;
                 background-repeat: no-repeat;
@@ -178,22 +189,103 @@
                 width: 50%;
                 height: 100%;
             }
+            .path-img {
+                right: calc(50% - 1px);
+                transform: scaleX(-1);
+                left: initial;
+            }
+            .icone-beneficios {
+                position: absolute;
+                bottom: 10px;
+                right: calc(50% + 10px);
+            }
+            a {
+                position: absolute;
+                bottom: 25px;
+                right: calc(50% + -235px);
+            }
             .texto {
-                padding-left: 75px;
+                padding-left: 28px;
                 h2 {
-                    padding: 110px 0 27px;
+                    margin-bottom: 26px;
+                    span {
+                        font-size: variables.$fsz-small;
+                        line-height: variables.$lh-small;
+                        color: #000;
+                        font-weight: 400;
+                    }
+                }
+                h4 {
+                    font-size: variables.$fsz-xsmall;
+                    line-height: variables.$lh-xsmall;
+                    color: variables.$primary-color;
                 }
                 p {
-                    font-size: variables.$fsz-medium;
-                    line-height: variables.$lh-medium;
-                    margin-bottom: 0;
+                    font-size: variables.$fsz-xsmall;
+                    line-height: variables.$lh-xsmall;
                 }
             }
         }
         #passo-a-passo {
             background-image: url("../images/bg-passo-a-passo.png");
+            .subtitulo {
+                font-weight: 300;
+                margin-bottom: 50px;
+            }
+            .passo-a-passo {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+                .passo-item {
+                    position: relative;
+                    background-color: rgba($color: #000000, $alpha: 0.12);
+                    padding: 16px 10px 16px 80px;
+                    border-radius: 10px 0;
+                    .index {
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        transform: translateY(-50%);
+                        color: rgba($color: #fff, $alpha: 0.2);
+                        font-size: 170px;
+                        font-weight: 700;
+                        line-height: 1;
+                    }
+                    .textos {
+                        h4,
+                        p {
+                            font-size: variables.$fsz-xsmall;
+                            line-height: variables.$lh-xsmall;
+                        }
+                        p {
+                            font-weight: 300;
+                        }
+                    }
+                    &:nth-child(1),
+                    &:nth-child(2) {
+                        .index {
+                            transform: translateY(-55%);
+                        }
+                    }
+                    &:nth-child(3),
+                    &:nth-child(4),
+                    &:nth-child(5),
+                    &:nth-child(7) {
+                        .index {
+                            transform: translateY(-62%);
+                        }
+                    }
+                    &:nth-child(6),
+                    &:nth-child(8) {
+                        .index {
+                            transform: translateY(-49%);
+                        }
+                    }
+                }
+            }
         }
         #veiculos {
+            padding: 80px 0;
             .list-grid-veiculos {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
@@ -258,9 +350,36 @@
                 }
             }
         }
+        #inclusoes {
+            padding: 0 0 187px 0;
+            .subtitulo {
+                font-weight: 400;
+                margin-bottom: 60px;
+            }
+            .inclusoes {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                justify-items: center;
+                gap: 62px 75px;
+                width: 85%;
+                margin: 0 auto;
+                .inclusao-item {
+                    width: calc(33% - 47px);
+                    h4 {
+                        font-size: variables.$fsz-small;
+                        line-height: variables.$lh-small;
+                    }
+                    p {
+                        font-size: variables.$fsz-xsmall;
+                        line-height: variables.$lh-xsmall;
+                    }
+                }
+            }
+        }
         #formulario {
             background-image: url("../images/bg-formulario.png");
-            padding: 40px 0 85px;
+            padding: 76px 0 30px;
             .content {
                 width: 47%;
                 margin: 0 auto;
@@ -269,24 +388,8 @@
                     margin-bottom: 30px;
                 }
                 .formulario {
-                    text-align: center;
-                    input[type="text"],
-                    input[type="email"],
-                    input[type="tel"] {
-                        font-size: variables.$fsz-xsmall;
-                        line-height: variables.$lh-xsmall;
-                        padding: 10px 30px;
-                        width: 100%;
-                        &::placeholder {
-                            color: #000;
-                        }
-                    }
-                    p {
-                        margin-bottom: 10px;
-                    }
                     input[type="submit"] {
-                        margin: 30px auto 0;
-                        width: 50%;
+                        margin-top: 20px;
                     }
                 }
             }

@@ -134,9 +134,11 @@
                 endif; 
                 ?>
             </div>
-            <div class="text-center w-100">
-                <button id="faq-toggle" class="btn primary-btn">Ver mais</button>
-            </div>
+            <?php if($i > 4) : ?>
+                <div class="text-center w-100">
+                    <button id="faq-toggle" class="btn primary-btn">Ver mais</button>
+                </div>
+            <?php endif; ?>
         </div>
     </section>
 </section>

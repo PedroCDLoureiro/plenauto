@@ -155,6 +155,33 @@ section {
     border: 1px solid variables.$sucess-color;
 }
 
+.formulario {
+    text-align: center;
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+        font-size: variables.$fsz-xsmall;
+        line-height: variables.$lh-xsmall;
+        padding: 10px 30px;
+        border: none;
+        width: 100%;
+        &::placeholder {
+            color: #000;
+        }
+    }
+    textarea {
+        border-radius: 10px;
+    }
+    p {
+        margin-bottom: 10px;
+    }
+    input[type="submit"] {
+        margin: 30px auto 0;
+        width: 50%;
+    }
+}
+
 // FAQ
 
 #faq {
@@ -162,7 +189,14 @@ section {
     h2 {
         margin-bottom: 30px;
     }
+    svg {
+        width: 15px;
+        transition: all ease 0.3s;
+    }
     .faq-list {
+        .faq-hidden {
+            display: none;
+        }
         .faq-item {
             border: 1px solid variables.$primary-color;
             background: #f6f7f7 0% 0% no-repeat padding-box;
@@ -170,9 +204,6 @@ section {
             border-radius: 26px;
             padding: 12px 20px;
             margin-bottom: 20px;
-            &.faq-hidden {
-                display: none;
-            }
             .faq-question {
                 display: flex;
                 justify-content: space-between;
@@ -180,13 +211,9 @@ section {
                 font-weight: bold;
                 color: variables.$primary-color;
                 cursor: pointer;
-                svg {
-                    width: 15px;
-                    transition: all ease 0.3s;
-                }
             }
             &.active {
-                svg {
+                .arrow-question {
                     transform: rotate(-180deg);
                 }
                 .faq-answer {
@@ -201,6 +228,52 @@ section {
                 overflow: hidden;
                 transition: 0.3s ease;
                 color: variables.$secondary-color;
+            }
+        }
+        &.with-categories {
+            h3 {
+                font-size: variables.$fsz-large;
+                line-height: variables.$lh-large;
+                text-transform: uppercase;
+                font-weight: bold;
+                color: variables.$primary-color;
+                margin-bottom: 0;
+            }
+            .faq-category {
+                border: 1px solid variables.$primary-color;
+                background: #f6f7f7 0% 0% no-repeat padding-box;
+                border: 1px solid variables.$primary-color;
+                border-radius: 26px;
+                padding: 12px 20px;
+                margin-bottom: 20px;
+                cursor: pointer;
+                h3 {
+                    font-size: 20px;
+                    line-height: 25px;
+                }
+                &.active {
+                    h3 {
+                        margin-bottom: 25px;
+                    }
+                    .arrow-category {
+                        transform: rotate(-180deg);
+                    }
+                    .faq-item {
+                        padding: 12px 20px;
+                        margin-bottom: 20px;
+                        max-height: 500px;
+                        opacity: 1;
+                    }
+                }
+            }
+            .faq-item {
+                border: none;
+                box-shadow: 0px 0px 12px #00000029;
+                padding: 0;
+                margin: 0;
+                max-height: 0;
+                opacity: 0;
+                overflow: hidden;
             }
         }
     }

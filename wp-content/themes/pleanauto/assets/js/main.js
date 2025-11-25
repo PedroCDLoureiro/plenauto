@@ -36,7 +36,12 @@ jQuery(document).ready(function ($) {
     // FAQ
 
     // Accordion
+    $(".faq-category").on("click", function () {
+        $(this).toggleClass("active");
+    });
+
     $(".faq-question").on("click", function () {
+        event.stopPropagation();
         let item = $(this).parent();
 
         // abrir/fechar individual
