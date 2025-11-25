@@ -28,7 +28,7 @@
     <section id="bloco-empresa" style="height: <?= $imagem_topo['height'] . 'px' ?>">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6 col-12 texto">
+                <div class="col-md-6 col-12 texto">
                     <h2><?= $titulo_topo; ?></h2>
                     <p><?= $texto_topo; ?></p>
                 </div>

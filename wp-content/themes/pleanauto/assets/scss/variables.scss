@@ -28,3 +28,11 @@ $lh-medium: 22px;
 $lh-large: 29px;
 $lh-xlarge: 35px;
 $lh-xxlarge: 59px;
+
+// Containers
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1164px;
+    }
+}

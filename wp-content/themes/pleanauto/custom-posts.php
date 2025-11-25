@@ -32,6 +32,38 @@ function create_slider_post_type() {
 }
 add_action( 'init', 'create_slider_post_type' );
 
+//  Veículos
+function create_veiculos_post_type() {
+    $args = array(
+        'labels' => array(
+            'name'               => 'Veículos',
+            'singular_name'      => 'Veículo',
+            'add_new'            => 'Adicionar Novo',
+            'add_new_item'       => 'Adicionar Novo Veículo',
+            'edit_item'          => 'Editar Veículo',
+            'new_item'           => 'Novo Veículo',
+            'view_item'          => 'Ver Veículo',
+            'search_items'       => 'Procurar Veículos',
+            'not_found'          => 'Nenhum Veículo encontrado',
+            'not_found_in_trash' => 'Nenhum Veículo encontrado na lixeira',
+            'all_items'          => 'Todos os Veículos',
+            'archives'           => 'Arquivos de Veículos',
+            'attributes'         => 'Atributos de Veículo',
+            'insert_into_item'   => 'Inserir no Veículo',
+            'uploaded_to_this_item' => 'Carregado para este Veículo',
+            'filter_items_list'  => 'Filtrar lista de Veículos',
+        ),
+        'public' => true,
+        'has_archive' => true,
+        'menu_icon' => 'dashicons-car',
+        'supports' => array( 'title'),
+        'rewrite' => array( 'slug' => 'veiculos' ), 
+    );
+
+    register_post_type( 'veiculos', $args );
+}
+add_action( 'init', 'create_veiculos_post_type' );
+
 // Por que alugar?
 
 acf_add_options_page([

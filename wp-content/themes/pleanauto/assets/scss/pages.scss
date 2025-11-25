@@ -163,4 +163,133 @@
             }
         }
     }
+    #page-para-voce {
+        #bloco-beneficios {
+            position: relative;
+            padding-top: 0;
+            margin-bottom: 55px;
+            #imagem-topo {
+                position: absolute;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center left;
+                top: 0;
+                left: 0;
+                width: 50%;
+                height: 100%;
+            }
+            .texto {
+                padding-left: 75px;
+                h2 {
+                    padding: 110px 0 27px;
+                }
+                p {
+                    font-size: variables.$fsz-medium;
+                    line-height: variables.$lh-medium;
+                    margin-bottom: 0;
+                }
+            }
+        }
+        #passo-a-passo {
+            background-image: url("../images/bg-passo-a-passo.png");
+        }
+        #veiculos {
+            .list-grid-veiculos {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+                .veiculo-item {
+                    .imagem-veiculo {
+                        border: 1px solid #f6f7f7;
+                        border-radius: 40px;
+                        height: 320px;
+                    }
+                    .infos-veiculo {
+                        background-image: url("../images/path-veiculo.png");
+                        background-repeat: no-repeat;
+                        background-size: 100% 100%;
+                        padding: 20px;
+                        margin-top: -138px;
+                        h3 {
+                            font-size: 20px;
+                            line-height: 24px;
+                            font-weight: bold;
+                            margin-bottom: 14px;
+                        }
+                        .cores {
+                            width: 100px;
+                            gap: 5px 14px;
+                        }
+                        p {
+                            color: rgba($color: #000000, $alpha: 0.8);
+                            margin-bottom: 0;
+                            font-weight: 400;
+                            &.ano {
+                                font-size: variables.$fsz-xsmall;
+                                line-height: variables.$lh-xsmall;
+                                margin-top: 7px;
+                                margin-bottom: 13px;
+                            }
+                            &.cores-disponiveis {
+                                font-size: variables.$fsz-xxsmall;
+                                line-height: variables.$lh-xxsmall;
+                            }
+                            &.versao {
+                                font-size: 20px;
+                                line-height: 24px;
+                            }
+                            &.valor {
+                                strong {
+                                    font-size: 21px;
+                                    line-height: 25px;
+                                }
+                            }
+                        }
+                        span {
+                            width: 24px;
+                            height: 8px;
+                            border-radius: 4px;
+                        }
+                        a {
+                            width: 210px;
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+        }
+        #formulario {
+            background-image: url("../images/bg-formulario.png");
+            padding: 40px 0 85px;
+            .content {
+                width: 47%;
+                margin: 0 auto;
+                .subtitulo {
+                    font-weight: 200;
+                    margin-bottom: 30px;
+                }
+                .formulario {
+                    text-align: center;
+                    input[type="text"],
+                    input[type="email"],
+                    input[type="tel"] {
+                        font-size: variables.$fsz-xsmall;
+                        line-height: variables.$lh-xsmall;
+                        padding: 10px 30px;
+                        width: 100%;
+                        &::placeholder {
+                            color: #000;
+                        }
+                    }
+                    p {
+                        margin-bottom: 10px;
+                    }
+                    input[type="submit"] {
+                        margin: 30px auto 0;
+                        width: 50%;
+                    }
+                }
+            }
+        }
+    }
 }
