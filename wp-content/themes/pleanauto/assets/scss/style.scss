@@ -84,7 +84,7 @@ section {
 .path-img {
     position: absolute;
     bottom: 0;
-    left: 50%;
+    left: calc(50% - 0.092px);
 }
 .list-grid {
     display: grid;

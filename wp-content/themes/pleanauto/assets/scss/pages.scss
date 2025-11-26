@@ -227,7 +227,7 @@
             }
         }
         #passo-a-passo {
-            background-image: url("../images/bg-passo-a-passo.png");
+            background-image: url("../images/bg-purple.png");
             .subtitulo {
                 font-weight: 300;
                 margin-bottom: 50px;
@@ -392,6 +392,118 @@
                     input[type="submit"] {
                         margin-top: 20px;
                     }
+                }
+            }
+        }
+    }
+    #page-quem-somos {
+        #banner {
+            position: relative;
+            .img-banner {
+                display: flex;
+                align-items: end;
+                justify-content: flex-end;
+                position: relative;
+                img {
+                    margin-top: -230px;
+                }
+            }
+            .container {
+                position: absolute;
+                top: 15%;
+                left: 50%;
+                transform: translateX(-50%);
+                p {
+                    font-size: variables.$fsz-xxlarge;
+                    line-height: variables.$lh-xxlarge;
+                    margin-bottom: 0;
+                }
+            }
+        }
+        #sobre-nos {
+            margin-top: -320px;
+        }
+        #nossa-jornada {
+            position: relative;
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding: 126px 0 97px;
+            margin-top: 30px;
+            z-index: 0;
+            .content {
+                width: 70%;
+                margin: 0 auto;
+                h2 {
+                    margin-bottom: 18px;
+                }
+                p {
+                    font-size: variables.$fsz-medium;
+                    line-height: variables.$lh-medium;
+                    color: #fff;
+                    text-align: center;
+                }
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.8);
+                z-index: -1;
+            }
+        }
+        #missao-visao-valores {
+            background-image: url("../images/bg-purple.png");
+            margin: 60px 0;
+            padding: 39px 0;
+            .content {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px 100px;
+                width: 70%;
+                margin: 0 auto;
+                .top {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 8px;
+                    h3 {
+                        color: #fff;
+                        text-transform: uppercase;
+                        font-weight: bold;
+                        margin-bottom: 0;
+                    }
+                }
+                p {
+                    font-size: variables.$fsz-xsmall;
+                    line-height: variables.$lh-xsmall;
+                    color: #fff;
+                    font-weight: 300;
+                    margin-bottom: 0;
+                }
+                .valores {
+                    grid-column: span 2;
+                }
+            }
+        }
+        #video {
+            padding: 0 0 60px;
+            .subtitulo {
+                font-weight: 600;
+                margin-bottom: 30px;
+            }
+            .content {
+                position: relative;
+                .path-img {
+                    transform: scaleX(-1);
+                    left: calc(100% - 109px);
+                }
+                .icon-video {
+                    position: absolute;
+                    bottom: 15px;
+                    right: 15px;
                 }
             }
         }
