@@ -127,14 +127,15 @@
                         $versao = get_field('versao');
                         $ano = get_field('ano');
                         $valor = get_field('valor');
+                        $link_externo = get_field('link_externo');
                     ?>
-                        <div class="veiculo-item">
+                        <div class="d-flex flex-column veiculo-item">
                             <?php if($imagem) : ?>
                                 <div class="imagem-veiculo">
                                     <img src="<?= $imagem['url']; ?>" alt="<?= $modelo; ?>" />
                                 </div>
                             <?php endif; ?>
-                            <div class="infos-veiculo">
+                            <div class="d-flex flex-column justify-content-between infos-veiculo">
                                 <div class="d-flex justify-content-between gap-3 top">
                                     <div class="">
                                         <h3 class="primary-color"><?= $modelo; ?></h3>
@@ -156,9 +157,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="mt-4 mb-2">A partir de</p>
-                                <p class="valor"><strong>R$ <?= $valor ?></strong>/mês</p>
-                                <a href="<?= get_permalink(); ?>" class="btn primary-btn">Monte o seu</a>
+                                <div class="d-flex flex-column bottom">
+                                    <p class="mt-4 mb-2">A partir de</p>
+                                    <p class="valor"><strong>R$ <?= $valor ?></strong>/mês</p>
+                                    <a href="<?= $link_externo; ?>" class="btn primary-btn">Monte o seu</a>
+                                </div>
                             </div>
                         </div>
                    <?php endwhile;
