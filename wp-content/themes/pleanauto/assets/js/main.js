@@ -7,6 +7,70 @@ jQuery(document).ready(function ($) {
         }
     });
 
+    // Anchor Scroll
+
+    jQuery(function ($) {
+        const HEADER_OFFSET = 100; // altura do menu fixo
+
+        // Função que faz scroll descontando o header
+        function scrollToHash(hash) {
+            if (!hash) return;
+
+            const id = hash.replace("#", "");
+            if (!id) return;
+
+            let $target = $("#" + id);
+
+            if ($target.length === 0) {
+                // fallback caso ID tenha caracteres especiais
+                try {
+                    $target = $(document.querySelector("#" + CSS.escape(id)));
+                } catch (e) {
+                    $target = $("#" + id);
+                }
+            }
+
+            if ($target.length === 0) return;
+
+            const targetOffset = $target.offset().top - HEADER_OFFSET;
+
+            $("html, body").animate(
+                { scrollTop: targetOffset },
+                600 // velocidade
+            );
+        }
+
+        // 1️⃣ Ao carregar a página, se já tiver hash, aplica o scroll
+        if (window.location.hash) {
+            setTimeout(function () {
+                scrollToHash(window.location.hash);
+            }, 150); // tempo para permitir renderização
+        }
+
+        // 2️⃣ Intercepta cliques em links com hash
+        $(document).on("click", 'a[href*="#"]', function (e) {
+            const href = $(this).attr("href");
+            if (!href.includes("#")) return;
+
+            const parts = href.split("#");
+            const path = parts[0];
+            const hash = "#" + parts[1];
+
+            // Caso seja link para a MESMA página
+            const samePage =
+                path === "" ||
+                path === "#" ||
+                path === window.location.pathname ||
+                path === window.location.href ||
+                path === window.location.origin + window.location.pathname;
+
+            if (samePage) {
+                e.preventDefault();
+                scrollToHash(hash);
+            }
+        });
+    });
+
     // Newsletter AJAX
     $("#newsletter-form")
         .off("submit")

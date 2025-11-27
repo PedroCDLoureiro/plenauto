@@ -24,6 +24,6 @@
                 </div>
             </div>
         <?php endif; ?>
-        <button class="btn primary-btn solicitar-orcamento">Solicitar orçamento</button>
+        <a href="<?= get_permalink(get_page_by_path('para-empresas')); ?>/#formulario" class="btn primary-btn anchor-scroll">Solicitar orçamento</a>
     </div>
 </section>

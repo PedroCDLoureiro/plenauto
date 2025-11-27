@@ -11,7 +11,7 @@
             <h3 class="mb-1">Para sua Empresa</h3>
             <h2 class="mb-2"><?= $titulo; ?></h2>
             <?= $descricao ?>
-            <a href="<?= get_permalink(get_page_by_path('para-empresas')); ?>" class="btn primary-btn mt-1">leia mais</a>
+            <a href="<?= get_permalink(get_page_by_path('para-empresas')); ?>/#bloco-empresa" class="btn primary-btn mt-1 anchor-scroll">leia mais</a>
         </div>
     </div>
 </section>

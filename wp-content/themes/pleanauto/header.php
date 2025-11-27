@@ -17,7 +17,6 @@ if (!defined('ABSPATH')) exit;
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/sliders.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/main.min.js"></script>

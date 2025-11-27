@@ -14,11 +14,12 @@
                         $midia = get_field('midia_slider_topo');
                         $texto_principal = get_field('texto_principal');
                         $texto_secundario = get_field('texto_secundario');
+                        $aplicar_mascara = get_field('aplicar_mascara');
                         $botao = get_field('botao');
                         $texto_botao = get_field('texto_botao');
                         $url_botao = get_field('url_botao');
                     ?>
-                    <div class="slider-item">
+                    <div class="slider-item<?= $aplicar_mascara ? ' mask-on' : ''; ?>">
                         <?php
                             if ($midia) : 
                                 $extensao = pathinfo($midia['url'], PATHINFO_EXTENSION);

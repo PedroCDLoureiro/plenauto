@@ -10,7 +10,7 @@
             <div class="col-12">
                 <h3 class="text-uppercase fw-bold mb-1">Para você</h3>
                 <h2 class="mb-3"><?= $titulo; ?></h2>
-                <a href="<?= get_permalink(get_page_by_path('para-voce')); ?>" class="btn primary-btn">leia mais</a>
+                <a href="<?= get_permalink(get_page_by_path('para-voce')); ?>/#bloco-beneficios" class="btn primary-btn anchor-scroll">leia mais</a>
             </div>
         </div>
     </div>

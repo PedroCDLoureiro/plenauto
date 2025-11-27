@@ -28,7 +28,7 @@
     $titulo_faq = get_field('titulo_faq', $page_id);
 ?>
 <section id="page-para-voce" class="page">
-    <div id="banner">
+    <div id="banner" class="mask-on">
         <img src="<?= $banner ?>" alt="<?= $pagina->post_title ?>" class="img-fluid w-100" />
         <?php if($titulo_banner) : ?>
             <div class="container">
@@ -38,12 +38,12 @@
     </div>
     <section id="assinatura">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-3 col-12">
+            <div class="row">
+                <div class="col-md-3 offset-md-1 col-12">
                     <h2><?= nl2br($titulo_topo); ?></h2>
                     <p class="fw-bold mb-0"><?= nl2br($subtitulo_topo); ?></p>
                 </div>
-                <div class="col-md-7 offset-md-2 col-12">
+                <div class="col-md-7 offset-md-1 col-12">
                     <h3 class="fw-bold"><?= $titulo_secundario_topo; ?></h3>
                     <p class="mb-0 descricao"><?= $texto_topo; ?></p>
                 </div>
@@ -57,31 +57,33 @@
                 <path data-name="Path 10" d="M354.757,1413.843c.155-21.754,0,112.593,0,112.593H464.848s-14.115,1.742-21.4-18.94c-.246-.483,0-24.411,0-24.411s4.467-38.323-34.5-44.773c-1.857-.648-32.8,0-32.8,0S354.6,1435.6,354.757,1413.843Z" transform="translate(-354.756 -1411.46)" fill="#fff"/>
             </svg>
             <img src="<?= $icone_beneficios['url'] ?>" class="icone-beneficios" />
-            <a href="#veiculos" class="btn primary-btn">Simular assinatura</a>
         <?php endif; ?>
         <div class="container h-100">
-            <div class="row align-items-center h-100">
+            <div class="row h-100">
                 <div class="col-md-6 offset-md-6 col-12 texto">
-                    <h2>
-                        <span><?= $titulo_beneficios; ?></span><br>
-                        <?= $destaque_titulo_beneficios; ?>
-                    </h2>
-                    <?php if( have_rows('beneficios', $page_id) ): ?>
-                        <div class="beneficios">
-                            <?php while( have_rows('beneficios', $page_id) ): the_row();
-                                $titulo_beneficio = get_sub_field('titulo_beneficio');
-                                $descricao_beneficio = get_sub_field('descricao_beneficio');
-                            ?>
-                            <div class="d-flex align-items-start gap-2 beneficio">
-                                <img src="<?= WP_TEMPLATE; ?>/assets/images/check.svg" class="me-2">
-                                <div class="content">
-                                    <h4><?= $titulo_beneficio ?></h4>
-                                    <p><?= $descricao_beneficio ?></p>
+                    <div class="content">
+                        <h2>
+                            <span><?= $titulo_beneficios; ?></span><br>
+                            <?= $destaque_titulo_beneficios; ?>
+                        </h2>
+                        <?php if( have_rows('beneficios', $page_id) ): ?>
+                            <div class="beneficios">
+                                <?php while( have_rows('beneficios', $page_id) ): the_row();
+                                    $titulo_beneficio = get_sub_field('titulo_beneficio');
+                                    $descricao_beneficio = get_sub_field('descricao_beneficio');
+                                ?>
+                                <div class="d-flex align-items-start gap-2 beneficio">
+                                    <img src="<?= WP_TEMPLATE; ?>/assets/images/check.svg" class="me-2">
+                                    <div class="content">
+                                        <h4><?= $titulo_beneficio ?></h4>
+                                        <p><?= $descricao_beneficio ?></p>
+                                    </div>
                                 </div>
+                                <?php endwhile; ?>
                             </div>
-                            <?php endwhile; ?>
-                        </div>
-                    <?php endif; ?>
+                        <?php endif; ?>
+                    </div>
+                    <a href="#veiculos" class="btn primary-btn">Simular assinatura</a>
                 </div>
             </div>
         </div>

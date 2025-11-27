@@ -1,6 +1,17 @@
 @use "variables";
 
 .page {
+    &.page-default {
+        padding: 60px 0;
+        h1 {
+            font-size: 40px;
+            line-height: 45px;
+            color: variables.$primary-color;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    }
     #page-para-empresas {
         #bloco-empresa {
             position: relative;
@@ -199,12 +210,13 @@
                 bottom: 10px;
                 right: calc(50% + 10px);
             }
-            a {
-                position: absolute;
-                bottom: 25px;
-                right: calc(50% + -235px);
-            }
             .texto {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-end;
+                gap: 124px;
+                padding-bottom: 25px;
                 padding-left: 28px;
                 h2 {
                     margin-bottom: 26px;
@@ -228,6 +240,7 @@
         }
         #passo-a-passo {
             background-image: url("../images/bg-purple.png");
+            padding: 61px 0 114px;
             .subtitulo {
                 font-weight: 300;
                 margin-bottom: 50px;

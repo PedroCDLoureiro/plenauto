@@ -129,13 +129,37 @@
     }
     add_filter( 'mce_buttons', 'enable_tinymce_colors' );
 
-    // Remover editor de blocos e imagem destacada para páginas
+    // Remove imagem destacada para páginas
 
     add_action('init', function() {
-        remove_post_type_support('page', 'editor');
         remove_post_type_support('page', 'thumbnail');
     });
 
+    // Remove o editor (Gutenberg + clássico) APENAS em páginas específicas, por slug
+
+    add_action('admin_init', function () {
+
+        // slugs das páginas onde NÃO deve haver editor
+        $slugs = ['para-voce', 'para-empresas', 'quem-somos'];
+
+        // Verifica se estamos editando um post
+        if (!isset($_GET['post'])) return;
+
+        $post_id = intval($_GET['post']);
+        $post = get_post($post_id);
+
+        if (!$post || $post->post_type !== 'page') return;
+
+        if (in_array($post->post_name, $slugs)) {
+
+            // 1) Desativa o Gutenberg apenas nesta página
+            add_filter('use_block_editor_for_post', '__return_false', 999);
+
+            // 2) Remove editor clássico apenas nesta página
+            remove_action('edit_form_after_title', 'wp_edit_form_after_title');
+            remove_post_type_support('page', 'editor');
+        }
+    });
 
     // Newsletter
 

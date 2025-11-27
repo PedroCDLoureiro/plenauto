@@ -14,7 +14,7 @@ if ($post->post_type == 'page') {
         get_template_part('pages/' . $pagina);
     } else {
         // Caso contrário, exibe o padrão
-        echo '<section id="' . $post->post_name . '" class="page">';
+        echo '<section id="' . $post->post_name . '" class="page page-default">';
 		echo '<div class="container">';
         echo '<h1>' . get_the_title() . '</h1>';
         echo '<div>' . get_the_content() . '</div>';

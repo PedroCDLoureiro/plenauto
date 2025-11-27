@@ -1,6 +1,6 @@
 jQuery(document).ready(function ($) {
     $("#slider-topo").slick({
-        autoplay: false,
+        autoplay: true,
         arrows: false,
         dots: true,
         speed: 500,
