@@ -92,41 +92,39 @@
             <h2 class="text-center"><?= $titulo_video ?></h2>
             <p class="text-center subtitulo"><?= $subtitulo_video ?></p>
             <div class="content">
-                <?php 
-                    if ($midia) : 
-                        $extensao = pathinfo($midia['url'], PATHINFO_EXTENSION);
-                        $extensao = strtolower($extensao);
+                <?php if ($midia) : 
+                    $extensao = pathinfo($midia['url'], PATHINFO_EXTENSION);
+                    $extensao = strtolower($extensao);
 
-                        // verifica se é vídeo
-                        if (in_array($extensao, ['mp4','webm','ogg'])) : ?>
+                    // verifica se é vídeo
+                    if (in_array($extensao, ['mp4','webm','ogg'])) : ?>
 
-                            <video 
-                                autoplay 
-                                muted 
-                                loop 
-                                playsinline 
-                                class="w-100"
-                                poster="<?php echo esc_url($thumbnail_video['url']); ?>"
-                            >
-                                <source src="<?php echo esc_url($midia['url']); ?>" type="video/<?php echo esc_attr($extensao); ?>">
-                            </video>
+                        <video 
+                            autoplay 
+                            muted 
+                            loop 
+                            playsinline 
+                            class="w-100"
+                            poster="<?php echo esc_url($thumbnail_video['url']); ?>"
+                        >
+                            <source src="<?php echo esc_url($midia['url']); ?>" type="video/<?php echo esc_attr($extensao); ?>">
+                        </video>
 
-                        <?php else : ?>
+                    <?php else : ?>
 
-                            <img src="<?php echo esc_url($midia['url']); ?>" alt="<?php echo esc_attr($midia['alt']); ?>">
+                        <img src="<?php echo esc_url($midia['url']); ?>" alt="<?php echo esc_attr($midia['alt']); ?>">
 
-                        <?php endif; ?>
-                        <svg class="path-img" xmlns="http://www.w3.org/2000/svg" width="110.092" height="115.012" viewBox="0 0 110.092 115.012">
-                            <path data-name="Path 10" d="M354.757,1413.843c.155-21.754,0,112.593,0,112.593H464.848s-14.115,1.742-21.4-18.94c-.246-.483,0-24.411,0-24.411s4.467-38.323-34.5-44.773c-1.857-.648-32.8,0-32.8,0S354.6,1435.6,354.757,1413.843Z" transform="translate(-354.756 -1411.46)" fill="#fff"/>
-                        </svg>
-                        <svg class="icon-video" xmlns="http://www.w3.org/2000/svg" width="61" height="61" viewBox="0 0 61 61">
-                            <g data-name="Group 401" transform="translate(-616.229 -2301.229)">
-                                <circle id="Ellipse_6" data-name="Ellipse 6" cx="30.5" cy="30.5" r="30.5" transform="translate(616.229 2301.229)" fill="#7b38a7"/>
-                                <path id="Path_21" data-name="Path 21" d="M5,5.568A2.568,2.568,0,0,1,8.862,3.349l15.4,8.984a2.568,2.568,0,0,1,0,4.439L8.862,25.76A2.568,2.568,0,0,1,5,23.541Z" transform="translate(634.009 2316.516)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-                            </g>
-                        </svg>
-                    <? endif; 
-                ?>
+                    <?php endif; ?>
+                    <svg class="path-img" xmlns="http://www.w3.org/2000/svg" width="110.092" height="115.012" viewBox="0 0 110.092 115.012">
+                        <path data-name="Path 10" d="M354.757,1413.843c.155-21.754,0,112.593,0,112.593H464.848s-14.115,1.742-21.4-18.94c-.246-.483,0-24.411,0-24.411s4.467-38.323-34.5-44.773c-1.857-.648-32.8,0-32.8,0S354.6,1435.6,354.757,1413.843Z" transform="translate(-354.756 -1411.46)" fill="#fff"/>
+                    </svg>
+                    <svg class="icon-video" xmlns="http://www.w3.org/2000/svg" width="61" height="61" viewBox="0 0 61 61">
+                        <g data-name="Group 401" transform="translate(-616.229 -2301.229)">
+                            <circle id="Ellipse_6" data-name="Ellipse 6" cx="30.5" cy="30.5" r="30.5" transform="translate(616.229 2301.229)" fill="#7b38a7"/>
+                            <path id="Path_21" data-name="Path 21" d="M5,5.568A2.568,2.568,0,0,1,8.862,3.349l15.4,8.984a2.568,2.568,0,0,1,0,4.439L8.862,25.76A2.568,2.568,0,0,1,5,23.541Z" transform="translate(634.009 2316.516)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                        </g>
+                    </svg>
+                <?php endif; ?>
             </div>
         </div>
     </section>
