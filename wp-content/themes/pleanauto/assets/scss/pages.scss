@@ -477,27 +477,41 @@
                 gap: 30px 100px;
                 width: 70%;
                 margin: 0 auto;
-                .top {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    margin-bottom: 8px;
-                    h3 {
-                        color: #fff;
-                        text-transform: uppercase;
-                        font-weight: bold;
-                        margin-bottom: 0;
+                .item {
+                    background-image: url("../images/path-2.png");
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    padding: 15px 10px 25px 25px;
+                    .top {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        margin-bottom: 12px;
+                        h3 {
+                            color: #fff;
+                            text-transform: uppercase;
+                            font-weight: bold;
+                            margin-bottom: 0;
+                        }
+                        svg {
+                            margin-top: -10px;
+                        }
                     }
-                }
-                p {
-                    font-size: variables.$fsz-xsmall;
-                    line-height: variables.$lh-xsmall;
-                    color: #fff;
-                    font-weight: 300;
-                    margin-bottom: 0;
-                }
-                .valores {
-                    grid-column: span 2;
+                    p {
+                        font-size: variables.$fsz-xsmall;
+                        line-height: variables.$lh-xsmall;
+                        color: #fff;
+                        font-weight: 300;
+                        margin-bottom: 0;
+                        padding-right: 55px;
+                    }
+                    &.valores {
+                        background-image: url("../images/path-3.png");
+                        grid-column: span 2;
+                        p {
+                            padding-right: 25px;
+                        }
+                    }
                 }
             }
         }
