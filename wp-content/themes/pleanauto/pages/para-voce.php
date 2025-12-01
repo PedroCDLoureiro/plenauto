@@ -39,24 +39,35 @@
     <section id="assinatura">
         <div class="container">
             <div class="row">
-                <div class="col-md-3 offset-md-1 col-12">
+                <div class="col-lg-3 offset-lg-1 col-md-4 offset-0 col-12">
                     <h2><?= nl2br($titulo_topo); ?></h2>
                     <p class="fw-bold mb-0"><?= nl2br($subtitulo_topo); ?></p>
                 </div>
-                <div class="col-md-7 offset-md-1 col-12">
+                <div class="col-lg-7 offset-md-1 col-md-7 col-12">
                     <h3 class="fw-bold"><?= $titulo_secundario_topo; ?></h3>
                     <p class="mb-0 descricao"><?= $texto_topo; ?></p>
                 </div>
             </div>
         </div>
     </section>
-    <section id="bloco-beneficios" style="height: <?= $imagem_beneficios['height'] . 'px' ?>">
+    <?php
+        $bloco_beneficios_style = '';
+        $svg_style = '';
+        if (!wp_is_mobile() && !empty($imagem_beneficios['height'])) {
+            $bloco_beneficios_style = 'style="height: ' . intval($imagem_beneficios['height']) . 'px"';
+        }
+        else{
+            $svg_style = 'bottom: ' . intval($imagem_beneficios['height'] - 65) . 'px';
+            $icone_style = 'bottom: ' . intval($imagem_beneficios['height'] - 55) . 'px';
+        }
+    ?>
+    <section id="bloco-beneficios" <?= $bloco_beneficios_style ?>>
         <?php if($imagem_beneficios) : ?>
-            <div id="imagem-topo" style="background-image: url('<?= $imagem_beneficios['url']; ?>');"></div>
-            <svg class="path-img" xmlns="http://www.w3.org/2000/svg" width="110.092" height="115.012" viewBox="0 0 110.092 115.012">
+            <div id="imagem-topo" style="background-image: url('<?= $imagem_beneficios['url']; ?>');height: <?= $imagem_beneficios['height'] . 'px'; ?>;"></div>
+            <svg style="<?= $svg_style; ?>" class="path-img" xmlns="http://www.w3.org/2000/svg" width="110.092" height="115.012" viewBox="0 0 110.092 115.012">
                 <path data-name="Path 10" d="M354.757,1413.843c.155-21.754,0,112.593,0,112.593H464.848s-14.115,1.742-21.4-18.94c-.246-.483,0-24.411,0-24.411s4.467-38.323-34.5-44.773c-1.857-.648-32.8,0-32.8,0S354.6,1435.6,354.757,1413.843Z" transform="translate(-354.756 -1411.46)" fill="#fff"/>
             </svg>
-            <img src="<?= $icone_beneficios['url'] ?>" class="icone-beneficios" />
+            <img src="<?= $icone_beneficios['url'] ?>" class="icone-beneficios" style="<?= $icone_style ?>" />
         <?php endif; ?>
         <div class="container h-100">
             <div class="row h-100">

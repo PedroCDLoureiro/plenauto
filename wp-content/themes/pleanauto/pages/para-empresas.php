@@ -25,7 +25,13 @@
     <div id="banner">
         <img src="<?= $banner ?>" alt="<?= $pagina->post_title ?>" class="img-fluid w-100" />
     </div>
-    <section id="bloco-empresa" style="height: <?= $imagem_topo['height'] . 'px' ?>">
+    <?php
+        $bloco_empresa_style = '';
+        if (!wp_is_mobile() && !empty($imagem_topo['height'])) {
+            $bloco_empresa_style = 'style="height: ' . intval($imagem_topo['height']) . 'px"';
+        }
+    ?>
+    <section id="bloco-empresa" <?= $bloco_empresa_style ?>>
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6 col-12 texto">
@@ -35,7 +41,7 @@
             </div>
         </div>
         <?php if($imagem_topo) : ?>
-            <div id="imagem-topo" style="background-image: url('<?= $imagem_topo['url']; ?>');"></div>
+            <div id="imagem-topo" style="background-image: url('<?= $imagem_topo['url']; ?>');height: <?= $imagem_topo['height'] . 'px'; ?>;"></div>
             <svg class="path-img" xmlns="http://www.w3.org/2000/svg" width="110.092" height="115.012" viewBox="0 0 110.092 115.012">
                 <path data-name="Path 10" d="M354.757,1413.843c.155-21.754,0,112.593,0,112.593H464.848s-14.115,1.742-21.4-18.94c-.246-.483,0-24.411,0-24.411s4.467-38.323-34.5-44.773c-1.857-.648-32.8,0-32.8,0S354.6,1435.6,354.757,1413.843Z" transform="translate(-354.756 -1411.46)" fill="#fff"/>
             </svg>

@@ -29,6 +29,66 @@
             grid-template-columns: repeat(2, 1fr);
         }
     }
+    .page {
+        #page-quem-somos {
+            #banner {
+                .container {
+                    top: 10%;
+                }
+                .img-banner img {
+                    margin-top: 0;
+                }
+            }
+            #sobre-nos {
+                margin-top: -150px;
+            }
+            #nossa-jornada {
+                .content {
+                    width: 100%;
+                }
+            }
+            #missao-visao-valores {
+                .content {
+                    gap: 30px 50px;
+                    width: 100%;
+                }
+            }
+        }
+        #page-para-empresas {
+            #formulario {
+                .content {
+                    width: 75%;
+                }
+            }
+        }
+        #page-para-voce {
+            .mask-on {
+                &::before {
+                    width: 75%;
+                }
+            }
+            #passo-a-passo {
+                .passo-a-passo {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+            }
+            #veiculos {
+                .list-grid-veiculos {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+            #inclusoes {
+                .inclusoes {
+                    width: 100%;
+                }
+            }
+            #formulario {
+                .content {
+                    width: 75%;
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 575px) {
@@ -40,6 +100,16 @@
         font-size: variables.$fsz-xsmall !important;
         line-height: variables.$lh-xsmall !important;
         padding: 4px 36px !important;
+    }
+    .list-grid {
+        .item {
+            .content {
+                p {
+                    font-size: variables.$fsz-small !important;
+                    line-height: variables.$lh-small !important;
+                }
+            }
+        }
     }
     header {
         .container {
@@ -165,14 +235,111 @@
         #page-quem-somos {
             #banner {
                 .container {
-                    top: 10%;
-                }
-                .img-banner img {
-                    margin-top: 0;
+                    p {
+                        font-size: variables.$fsz-xlarge;
+                        line-height: variables.$lh-xlarge;
+                    }
                 }
             }
-            #sobre-nos {
-                margin-top: -150px;
+            #nossa-jornada {
+                .content {
+                    p {
+                        font-size: variables.$fsz-small;
+                        line-height: variables.$lh-small;
+                    }
+                }
+            }
+            #missao-visao-valores {
+                .content {
+                    grid-template-columns: 1fr;
+                    .item {
+                        &.valores {
+                            background-image: url(../images/path-2.png);
+                            grid-column: auto;
+                        }
+                    }
+                }
+            }
+        }
+        #page-para-empresas {
+            #bloco-empresa {
+                h2 {
+                    padding: 30px 0 27px !important;
+                }
+                .texto {
+                    p {
+                        font-size: variables.$fsz-small;
+                        line-height: variables.$lh-small;
+                    }
+                }
+                #imagem-topo {
+                    position: relative;
+                    margin-top: 30px;
+                    width: 100%;
+                }
+                .path-img {
+                    left: 0;
+                    bottom: 29px;
+                }
+            }
+            #terceirizando {
+                #beneficios {
+                    grid-template-columns: 1fr;
+                }
+            }
+            #transforme {
+                &::before {
+                    width: 75%;
+                }
+            }
+            #formulario {
+                .content {
+                    width: 100%;
+                }
+            }
+        }
+        #page-para-voce {
+            #bloco-beneficios {
+                #imagem-topo {
+                    position: relative;
+                    width: 100%;
+                }
+                .texto {
+                    gap: 25px;
+                }
+                .path-img {
+                    right: 0;
+                }
+                .icone-beneficios {
+                    right: 10px;
+                }
+            }
+            #passo-a-passo {
+                .passo-a-passo {
+                    grid-template-columns: repeat(1, 1fr);
+                    .passo-item {
+                        .index {
+                            font-size: 100px;
+                        }
+                    }
+                }
+            }
+            #veiculos {
+                .list-grid-veiculos {
+                    grid-template-columns: repeat(1, 1fr);
+                }
+            }
+            #inclusoes {
+                .inclusoes {
+                    .inclusao-item {
+                        width: calc(50% - 47px);
+                    }
+                }
+            }
+            #formulario {
+                .content {
+                    width: 100%;
+                }
             }
         }
     }

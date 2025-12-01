@@ -115,7 +115,8 @@
                         position: relative;
                         border-radius: 30px;
                         .path-img {
-                            left: 0;
+                            left: -0.092px;
+                            bottom: -1px;
                             z-index: 0;
                         }
                         span {
@@ -202,6 +203,7 @@
             }
             .path-img {
                 right: calc(50% - 1px);
+                bottom: -1px;
                 transform: scaleX(-1);
                 left: initial;
             }

@@ -38,7 +38,7 @@
             <div class="row">
                 <div class="col-md-6 col-12 texto">
                     <h2 class="mt-5 mb-3 text-uppercase"><?= $titulo_sobre_nos ?></h2>
-                    <p class="pe-5 mb-0"><?= $texto_sobre_nos ?></p>
+                    <p class="pe-5 mb-md-0 mb-3"><?= $texto_sobre_nos ?></p>
                 </div>
                 <div class="col-md-6 col-12 imagem">
                     <img src="<?= $imagem_sobre_nos ?>" alt="<?= $titulo_sobre_nos ?>" class="img-fluid" />
