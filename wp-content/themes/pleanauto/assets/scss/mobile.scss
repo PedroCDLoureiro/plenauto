@@ -7,3 +7,197 @@
         }
     }
 }
+@media (max-width: 768px) {
+    .list-grid {
+        grid-template-columns: repeat(1, 1fr) !important;
+        width: 100% !important;
+    }
+    #por-que-alugar {
+        .container {
+            width: 100%;
+        }
+    }
+    #para-sua-empresa {
+        .container {
+            .text {
+                width: 35%;
+            }
+        }
+    }
+    #terceirizacao-de-frota {
+        .terceirizacao {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    h2 {
+        font-size: variables.$fsz-large !important;
+        line-height: variables.$lh-large !important;
+    }
+    .btn {
+        font-size: variables.$fsz-xsmall !important;
+        line-height: variables.$lh-xsmall !important;
+        padding: 4px 36px !important;
+    }
+    header {
+        .container {
+            .menu-header {
+                #nav-desk {
+                    position: absolute;
+                    bottom: -30px;
+                    left: 0;
+                    padding: 10px 0;
+                    width: 100%;
+                    background-color: variables.$primary-color;
+                    opacity: 0;
+                    pointer-events: none;
+                    z-index: -1;
+                    transition: all ease 0.3s;
+                    #menu-menu-principal {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        text-align: center;
+                        gap: 10px;
+                        justify-content: center;
+                    }
+                    &.active {
+                        opacity: 1;
+                        bottom: -60px;
+                        z-index: 100;
+                        pointer-events: auto;
+                    }
+                }
+                #menu-mobile {
+                    display: flex;
+                    width: 30px;
+                }
+            }
+        }
+        &.active {
+            .container {
+                .menu-header {
+                    #nav-desk {
+                        bottom: -50px;
+                        &.active {
+                            bottom: -55px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #slider-topo {
+        .container {
+            .slider-text {
+                h2 {
+                    font-size: variables.$fsz-xlarge;
+                    line-height: variables.$lh-xlarge;
+                }
+                h3 {
+                    font-size: variables.$fsz-medium;
+                    line-height: variables.$lh-medium;
+                }
+            }
+        }
+    }
+    #para-sua-empresa {
+        img {
+            min-height: 200px;
+            object-fit: cover;
+            object-position: center;
+        }
+        .container {
+            .text {
+                left: 50px;
+                width: 75%;
+                bottom: 10px;
+            }
+        }
+    }
+    #atendimento {
+        img {
+            min-height: 250px;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+    #por-que-assinar {
+        .subtitulo {
+            width: 100%;
+        }
+    }
+    #sustentabilidade-tecnologia {
+        #slider-depoimentos {
+            .slick-list,
+            .slick-slide {
+                margin: 0;
+            }
+            .slick-dots {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+    #newsletter {
+        .input-field {
+            form {
+                width: 100%;
+                input {
+                    margin-left: 0;
+                    padding-right: 150px;
+                    width: 100%;
+                }
+                button {
+                    right: 0;
+                    height: 35px !important;
+                }
+            }
+        }
+    }
+    #nossos-enderecos {
+        .enderecos {
+            grid-template-columns: 1fr;
+        }
+    }
+    .page {
+        #page-quem-somos {
+            #banner {
+                .container {
+                    top: 10%;
+                }
+                .img-banner img {
+                    margin-top: 0;
+                }
+            }
+            #sobre-nos {
+                margin-top: -150px;
+            }
+        }
+    }
+    footer {
+        .row {
+            text-align: center;
+            gap: 25px;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    #sustentabilidade-tecnologia {
+        #slider-depoimentos {
+            .item {
+                .avaliacao {
+                    width: 80px;
+                    height: 16px;
+                    background-size: 16px 16px;
+                    .rating-fill {
+                        height: 16px;
+                        background-size: 16px 16px;
+                    }
+                }
+            }
+        }
+    }
+}

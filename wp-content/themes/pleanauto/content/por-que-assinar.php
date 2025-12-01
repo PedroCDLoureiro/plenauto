@@ -7,7 +7,7 @@
 <section id="por-que-assinar">
     <div class="container d-flex flex-column align-items-center">
         <h2 class="text-center"><?= $titulo; ?></h2>
-        <p class="w-50 text-center mb-5 subtitulo"><?= $subtitulo; ?></p>
+        <p class="text-center mb-5 subtitulo"><?= $subtitulo; ?></p>
         <?php if( have_rows('beneficios', $slug) ): ?>
             <div class="beneficios list-grid">
                 <?php while( have_rows('beneficios', $slug) ): the_row();

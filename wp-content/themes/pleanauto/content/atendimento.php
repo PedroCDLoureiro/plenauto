@@ -3,6 +3,7 @@
     $titulo = get_field('titulo', $slug);
     $subtitulo = get_field('subtitulo', $slug);
     $imagem = get_field('imagem', $slug);
+    $imagem_mobile = get_field('imagem_mobile', $slug);
     $whatsapp = get_field('whatsapp', $slug);
     $mensagem_padrao = get_field('mensagem_padrao', $slug);
     $numero = preg_replace('/\D+/', '', $whatsapp);
@@ -13,7 +14,11 @@
 
 ?>
 <section id="atendimento" class="d-flex align-items-center">
-    <img src="<?= $imagem ?>" alt="<?= $titulo ?>" class="w-100">
+    <?php if(wp_is_mobile()) : ?>
+        <img src="<?= $imagem_mobile ? $imagem_mobile : $imagem ?>" alt="<?= $titulo ?>" class="w-100">
+    <?php else : ?>
+        <img src="<?= $imagem ?>" alt="<?= $titulo ?>" class="w-100">
+    <?php endif; ?>
     <div class="container">
         <div class="row">
             <div class="d-flex flex-column align-items-center content">

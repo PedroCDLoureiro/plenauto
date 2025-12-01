@@ -6,11 +6,11 @@
 <section id="sustentabilidade-tecnologia">
     <div class="container">
         <div class="row">
-            <div class="col-md-3 col-12 d-flex flex-column align-items-center justify-content-center titulo">
+            <div class="col-lg-3 col-md-5 col-12 d-flex flex-column align-items-center justify-content-center titulo">
                 <h2 class="text-white mb-3"><?= $titulo ?></h2>
                 <p class="text-white subtitulo"><?= $subtitulo ?></p>
             </div>
-            <div class="col-md-9 col-12 depoimentos">
+            <div class="col-lg-9 col-md-7 col-12 depoimentos">
                 <?php if( have_rows('depoimentos', $slug) ): ?>
                     <div id="slider-depoimentos">
                         <?php while( have_rows('depoimentos', $slug) ): the_row();

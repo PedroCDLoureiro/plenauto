@@ -7,6 +7,12 @@ jQuery(document).ready(function ($) {
         }
     });
 
+    $("#menu-mobile")
+        .off("click")
+        .on("click", function () {
+            $("#nav-desk").toggleClass("active");
+        });
+
     // Anchor Scroll
 
     jQuery(function ($) {

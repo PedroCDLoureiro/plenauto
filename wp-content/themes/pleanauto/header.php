@@ -27,14 +27,14 @@ if (!defined('ABSPATH')) exit;
 <header class="site-header<?= !is_front_page() ? ' not-home' : ''; ?>">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-4 col-5">
+            <div class="col-md-5 col-9">
                 <div class="logo">
                     <a href="<?php echo WP_URL; ?>/">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo_branca.svg" alt="<?php bloginfo( 'name' ); ?>" />
                     </a>
                 </div>
             </div>
-            <div class="col-lg-8 col-7 d-flex justify-content-end menu-header">
+            <div class="col-md-7 col-3 d-flex justify-content-end menu-header">
                 <nav id="nav-desk" class="main-navigation">
                     <?php
                         wp_nav_menu(array(
@@ -43,6 +43,9 @@ if (!defined('ABSPATH')) exit;
                         ));
                     ?>
                 </nav>
+                <div id="menu-mobile">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="#ffffff" d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
+                </div>
             </div>
         </div>
     </div>

@@ -89,6 +89,9 @@
                 margin-bottom: 0;
             }
         }
+        img {
+            max-width: 100%;
+        }
     }
 }
 #para-sua-empresa {
@@ -127,6 +130,9 @@
         margin-bottom: 30px;
     }
     .terceirizacao {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
         .item {
             .content {
                 img {
@@ -164,6 +170,7 @@
     .subtitulo {
         font-size: variables.$fsz-xsmall;
         line-height: variables.$lh-xsmall;
+        width: 50%;
     }
     a {
         margin-top: 55px;
@@ -256,7 +263,6 @@
                 opacity: 1;
             }
         }
-
         .slick-dots {
             bottom: -60px;
             text-align: left;

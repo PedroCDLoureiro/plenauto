@@ -15,5 +15,14 @@ jQuery(document).ready(function ($) {
         arrows: false,
         dots: true,
         speed: 500,
+        responsive: [
+            {
+                breakpoint: 800,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+        ],
     });
 });
