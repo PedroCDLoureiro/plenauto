@@ -12,6 +12,10 @@
             height: 100dvh;
             object-fit: cover;
             object-position: center;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            will-change: transform;
         }
         .slider-video {
             height: 100dvh;

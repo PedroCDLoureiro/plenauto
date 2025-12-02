@@ -3,6 +3,7 @@
     $page_id = $pagina->id;
     // Banner
     $banner = get_field('banner_principal', $page_id);
+    $banner_mobile = get_field('banner_principal_mobile', $page_id);
     // Topo
     $imagem_topo = get_field('imagem_topo', $page_id);
     $titulo_topo = get_field('titulo_topo', $page_id);
@@ -23,7 +24,11 @@
 ?>
 <section id="page-para-empresas" class="page">
     <div id="banner">
-        <img src="<?= $banner ?>" alt="<?= $pagina->post_title ?>" class="img-fluid w-100" />
+        <?php if(wp_is_mobile()) : ?>
+            <img src="<?= $banner_mobile ? $banner_mobile : $banner ?>" alt="<?= $pagina->post_title ?>" class="img-fluid w-100" />
+        <?php else: ?>
+            <img src="<?= $banner ?>" alt="<?= $pagina->post_title ?>" class="img-fluid w-100" />
+        <?php endif; ?>
     </div>
     <?php
         $bloco_empresa_style = '';

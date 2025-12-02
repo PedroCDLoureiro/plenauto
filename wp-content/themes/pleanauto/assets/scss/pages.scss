@@ -167,6 +167,9 @@
                 bottom: 20%;
                 left: 50%;
                 transform: translateX(-50%);
+                h2 {
+                    margin-bottom: 0;
+                }
                 p {
                     font-size: variables.$fsz-xxlarge;
                     line-height: variables.$lh-xxlarge;

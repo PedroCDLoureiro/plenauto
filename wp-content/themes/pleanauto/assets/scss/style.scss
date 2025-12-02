@@ -225,10 +225,15 @@ section {
             .faq-question {
                 display: flex;
                 justify-content: space-between;
+                gap: 10px;
                 align-items: center;
                 font-weight: bold;
                 color: variables.$primary-color;
                 cursor: pointer;
+                svg {
+                    min-width: 15px;
+                    width: 15px;
+                }
             }
             &.active {
                 .arrow-question {
@@ -266,8 +271,8 @@ section {
                 margin-bottom: 20px;
                 cursor: pointer;
                 h3 {
-                    font-size: 20px;
-                    line-height: 25px;
+                    font-size: variables.$fsz-medium;
+                    line-height: variables.$lh-medium;
                 }
                 &.active {
                     h3 {

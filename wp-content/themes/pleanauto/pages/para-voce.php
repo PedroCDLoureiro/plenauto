@@ -3,6 +3,7 @@
     $page_id = $pagina->id;
     // Banner
     $banner = get_field('banner_principal', $page_id);
+    $banner_mobile = get_field('banner_principal_mobile', $page_id);
     $titulo_banner = get_field('titulo_banner', $page_id);
     // Topo
     $imagem_topo = get_field('imagem_topo', $page_id);
@@ -29,7 +30,11 @@
 ?>
 <section id="page-para-voce" class="page">
     <div id="banner" class="mask-on">
-        <img src="<?= $banner ?>" alt="<?= $pagina->post_title ?>" class="img-fluid w-100" />
+        <?php if(wp_is_mobile()) : ?>
+            <img src="<?= $banner_mobile ? $banner_mobile : $banner ?>" alt="<?= $pagina->post_title ?>" class="img-fluid w-100" />
+        <?php else: ?>
+            <img src="<?= $banner ?>" alt="<?= $pagina->post_title ?>" class="img-fluid w-100" />
+        <?php endif; ?>
         <?php if($titulo_banner) : ?>
             <div class="container">
                 <h2 class="text-white"><?= $titulo_banner; ?></h2>
@@ -39,11 +44,11 @@
     <section id="assinatura">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 offset-lg-1 col-md-4 offset-0 col-12">
+                <div class="col-lg-3 offset-lg-1 col-md-4 offset-0 col-12 d-left">
                     <h2><?= nl2br($titulo_topo); ?></h2>
                     <p class="fw-bold mb-0"><?= nl2br($subtitulo_topo); ?></p>
                 </div>
-                <div class="col-lg-7 offset-md-1 col-md-7 col-12">
+                <div class="col-lg-7 offset-md-1 col-md-7 col-12 d-right">
                     <h3 class="fw-bold"><?= $titulo_secundario_topo; ?></h3>
                     <p class="mb-0 descricao"><?= $texto_topo; ?></p>
                 </div>
@@ -57,8 +62,8 @@
             $bloco_beneficios_style = 'style="height: ' . intval($imagem_beneficios['height']) . 'px"';
         }
         else{
-            $svg_style = 'bottom: ' . intval($imagem_beneficios['height'] - 65) . 'px';
-            $icone_style = 'bottom: ' . intval($imagem_beneficios['height'] - 55) . 'px';
+            $svg_style = 'top: ' . intval($imagem_beneficios['height'] - 115) . 'px';
+            $icone_style = 'top: ' . intval($imagem_beneficios['height'] - 75) . 'px';
         }
     ?>
     <section id="bloco-beneficios" <?= $bloco_beneficios_style ?>>
