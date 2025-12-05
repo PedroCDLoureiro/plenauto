@@ -7,10 +7,11 @@ jQuery(document).ready(function ($) {
         }
     });
 
-    $("#menu-mobile")
+    $("#open-menu-mobile, #close-menu-mobile")
         .off("click")
         .on("click", function () {
-            $("#nav-desk").toggleClass("active");
+            $("#menu-mobile").toggleClass("active");
+            $("body").toggleClass("no-scroll");
         });
 
     // Anchor Scroll

@@ -43,10 +43,30 @@ if (!defined('ABSPATH')) exit;
                         ));
                     ?>
                 </nav>
-                <div id="menu-mobile">
+                <div id="open-menu-mobile">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="#ffffff" d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
                 </div>
             </div>
         </div>
+    </div>
+    <div id="menu-mobile">
+        <div id="top-menu-mobile" class="d-flex justify-content-between align-items-center">
+            <div class="logo">
+                <a href="<?php echo WP_URL; ?>/">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo_branca.svg" alt="<?php bloginfo( 'name' ); ?>" />
+                </a>
+            </div>
+            <div id="close-menu-mobile">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="#ffffff" d="M55.1 73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L147.2 256 9.9 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192.5 301.3 329.9 438.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.8 256 375.1 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192.5 210.7 55.1 73.4z"/></svg>
+            </div>
+        </div>
+        <nav id="nav-mobile" class="main-navigation">
+            <?php
+                wp_nav_menu(array(
+                    'theme_location' => 'main_menu', 
+                    'menu_class' => 'menu',
+                ));
+            ?>
+        </nav>
     </div>
 </header>

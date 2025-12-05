@@ -30,13 +30,20 @@ header {
                     }
                 }
             }
-            #menu-mobile {
+            #open-menu-mobile {
                 display: none;
                 svg {
                     width: 30px;
                 }
             }
         }
+    }
+    #menu-mobile {
+        width: 100dvw;
+        height: 100dvh;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity ease 0.5s;
     }
     &.not-home {
         position: relative;

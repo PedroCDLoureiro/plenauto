@@ -11,9 +11,11 @@
             <div id="slider-topo" class="slider">
                 <?php while ( $query->have_posts() ) : $query->the_post(); ?>
                     <?php 
-                        $midia = get_field('midia_slider_topo');
+                        $midia_desk = get_field('midia_slider_topo');
+                        $midia_mobile = get_field('midia_slider_topo_mobile');
                         $texto_principal = get_field('texto_principal');
                         $texto_secundario = get_field('texto_secundario');
+                        $posicao_do_texto = get_field('posicao_do_texto');
                         $aplicar_mascara = get_field('aplicar_mascara');
                         $botao = get_field('botao');
                         $texto_botao = get_field('texto_botao');
@@ -21,22 +23,36 @@
                     ?>
                     <div class="slider-item<?= $aplicar_mascara ? ' mask-on' : ''; ?>">
                         <?php
-                            if ($midia) : 
+                            // Define qual mídia será usada com base no dispositivo
+                            $midia = ( wp_is_mobile() && !empty($midia_mobile) ) ? $midia_mobile : $midia_desk;
+
+                            // Garante que a URL exista
+                            if (!empty($midia['url'])) :
+
+                                // Pega a extensão do arquivo
                                 $extensao = pathinfo($midia['url'], PATHINFO_EXTENSION);
-                                if (in_array(strtolower($extensao), ['mp4','webm','ogg'])) : ?>
+                                $extensao = strtolower($extensao);
+
+                                // Verifica se é vídeo
+                                if (in_array($extensao, ['mp4','webm','ogg'])) : ?>
+                                    
                                     <div class="slider-video">
                                         <video autoplay muted loop playsinline class="w-100">
                                             <source src="<?php echo esc_url($midia['url']); ?>" type="video/<?php echo esc_attr($extensao); ?>">
                                         </video>
                                     </div>
+
                                 <?php else : ?>
+
                                     <div class="slider-image">
-                                        <img src="<?php echo esc_url($midia['url']); ?>" alt="<?php echo esc_attr($midia['alt']); ?>">
+                                        <img src="<?php echo esc_url($midia['url']); ?>" alt="<?php echo esc_attr($midia['alt'] ?? ''); ?>">
                                     </div>
-                                <?php endif; 
-                            endif; 
+
+                                <?php endif;
+
+                            endif;
                         ?>
-                        <div class="container">
+                        <div class="container<?= wp_is_mobile() ? ' ' . $posicao_do_texto : ''; ?>">
                             <div class="slider-text">
                                 <?php if($texto_principal) : ?>
                                     <h2 class="slider-title"><?= $texto_principal; ?></h2>
