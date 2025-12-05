@@ -25,4 +25,13 @@ jQuery(document).ready(function ($) {
             },
         ],
     });
+    $(".slider-enderecos").slick({
+        autoplay: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        arrows: false,
+        dots: true,
+        speed: 500,
+    });
 });

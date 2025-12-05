@@ -8,7 +8,7 @@
     <div class="container d-flex flex-column align-items-center">
         <h2 class="text-center text-white">Nossos Endereços</h2>
         <?php if( have_rows('enderecos', $slug) ): ?>
-            <div class="enderecos">
+            <div class="enderecos<?= wp_is_mobile() ? ' slider-enderecos' : '' ?>">
                 <?php while( have_rows('enderecos', $slug) ): the_row();
                     $titulo = get_sub_field('titulo');
                     $endereco = get_sub_field('endereco');

@@ -215,25 +215,42 @@
             text-align: center;
         }
     }
+    #por-que-alugar {
+        .row {
+            flex-direction: column-reverse;
+            gap: 36px;
+            .img-pilares {
+                padding: 0;
+            }
+        }
+    }
     #para-sua-empresa {
         img {
             object-fit: contain;
             object-position: center;
         }
         .container {
+            padding: 0;
             .text {
-                top: 0;
                 left: 50px;
                 width: 75%;
                 height: 100%;
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-                justify-content: center;
+                justify-content: end;
                 p {
                     margin-bottom: 10px;
                 }
             }
+        }
+    }
+    #terceirizacao-de-frota {
+        padding: 50px 0 79px !important;
+        width: 75%;
+        margin: 0 auto;
+        .terceirizacao {
+            grid-template-columns: repeat(1, 1fr);
         }
     }
     #atendimento {
@@ -242,14 +259,29 @@
             object-fit: cover;
             object-position: center;
         }
+        .content {
+            text-align: center;
+        }
     }
     #por-que-assinar {
-        .subtitulo {
-            width: 100%;
+        .container {
+            padding: 0;
+            .subtitulo {
+                padding: 0 15px;
+                width: 100%;
+            }
+            p {
+                padding: 0 30px;
+            }
         }
     }
     #sustentabilidade-tecnologia {
         #slider-depoimentos {
+            .item {
+                .infos-depoimento {
+                    padding-left: 5px;
+                }
+            }
             .slick-track {
                 display: flex;
                 gap: 15px;
@@ -265,17 +297,23 @@
         }
     }
     #newsletter {
-        .input-field {
-            form {
-                width: 100%;
-                input {
-                    margin-left: 0;
-                    padding-right: 150px;
+        .container {
+            width: 75%;
+            .input-field {
+                form {
+                    text-align: center;
                     width: 100%;
-                }
-                button {
-                    right: 0;
-                    height: 35px !important;
+                    input {
+                        margin-left: 0;
+                        padding-right: 150px;
+                        width: 100%;
+                    }
+                    button {
+                        position: relative;
+                        right: 0;
+                        margin-top: 16px;
+                        height: 35px !important;
+                    }
                 }
             }
         }
@@ -283,6 +321,39 @@
     #nossos-enderecos {
         .enderecos {
             grid-template-columns: 1fr;
+            .item {
+                display: flex;
+                justify-content: center;
+                .content {
+                    width: fit-content;
+                }
+            }
+            .slick-dots {
+                bottom: -50px;
+                text-align: center;
+                left: 0;
+                width: 100%;
+                li {
+                    width: 15px;
+                    height: 20px;
+                    margin: 0;
+                    button {
+                        &::before {
+                            font-size: 4px;
+                            color: #fff;
+                            opacity: 1;
+                            transition: all ease 0.3s;
+                        }
+                    }
+                    &.slick-active {
+                        button {
+                            &::before {
+                                font-size: 10px;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
     .page {

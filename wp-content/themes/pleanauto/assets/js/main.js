@@ -14,6 +14,12 @@ jQuery(document).ready(function ($) {
             $("body").toggleClass("no-scroll");
         });
 
+    // Sliders
+
+    $("#slider-depoimentos").on("init afterChange", function () {
+        $(".slick-cloned").attr("inert", "");
+    });
+
     // Anchor Scroll
 
     jQuery(function ($) {
